@@ -12,7 +12,7 @@ const props = defineProps(["data"]);
           <div class="card__data">
             <div class="card__info">
               <h2>{{ data.nome }}</h2>
-              <p style="color: rgba(0, 0, 0, 0.596)">{{ data.descricao }}</p>
+              <p style="color: #000">{{ data.descricao }}</p>
             </div>
             <h3 class="card__price"></h3>
             <button class="card__add">+</button>
@@ -65,7 +65,7 @@ p {
   border-top-left-radius: 50%;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #f28322;
+  background-color: #f25430;
   padding-top: calc(90% * 1.18);
   transition: all 0.3s ease-out 0.1s;
   display: flex;
@@ -81,7 +81,7 @@ p {
   font-size: 16px;
   font-family: Barlow-Black;
   font-weight: 800;
-  color: #141414;
+  color: #ffffff;
 }
 .card__info p {
   margin-top: 5px;
