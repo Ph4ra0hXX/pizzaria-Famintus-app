@@ -200,6 +200,11 @@ export default {
       this.notificacaoRemoverPedido();
     }
 
+    function removerPedidoPizza(index) {
+      this.carrinho.burgers.splice(index, 1);
+      this.notificacaoRemoverPedido();
+    }
+
     function removerItemBebida(pedidoIndex, secao, itemIndex) {
       this.carrinho.bebidas[pedidoIndex][secao].splice(itemIndex, 1);
     }
@@ -261,6 +266,7 @@ export default {
       removerItemCombo,
       aumentarQuantidadeCombo,
       diminuirQuantidadeCombo,
+      removerPedidoPizza,
     };
   },
 };
@@ -272,61 +278,37 @@ export default {
       <div class="paypal__subheader">
         <h1 class="paypal__username">Olá 👋</h1>
         <span class="paypal__help-text"
-          >Você selecionou {{ carrinho.getTotalPedidos }} item!</span
+          >Você selecionou {{ carrinho.valorTotal.getTotalPedidos }} item!</span
         >
       </div>
     </div>
     <div class="paypal__cart">
       <hr />
+      <!------------------------->
       <div
         id="pedidoFundo"
         v-for="(pedido, pedidoIndex) in carrinho.burgers"
         :key="pedidoIndex"
       >
-        <!-- <p id="posicaoPedido">Pedido N° {{ pedidoIndex + 1 }}</p>-->
-
-        <div v-for="(secaoItens, secao) in pedido" :key="secao">
-          <p v-for="(item, itemIndex) in secaoItens" :key="itemIndex">
-            <template v-if="item.quantidade > 0">
-              <div id="priceAndDiv">
-                <div id="priceAndName">
-                  <div>
-                    <span id="quantidadeDiv">{{ item.quantidade }}x</span>
-                    {{ item.nome }}
-                  </div>
-                </div>
-                <div>
-                  <button
-                    @click="
-                      aumentarQuantidadeBurgers(pedidoIndex, secao, itemIndex)
-                    "
-                    class="botao1"
-                  >
-                    +
-                  </button>
-
-                  <button
-                    @click="
-                      diminuirQuantidadeBurgers(pedidoIndex, secao, itemIndex)
-                    "
-                    class="botao2"
-                  >
-                    -
-                  </button>
-                </div>
-              </div>
-            </template>
+        <!-- Se os pedidos forem do tipo pizza -->
+        <div v-if="pedido.sabores">
+          <p>
+            <strong>Tamanho:</strong> {{ pedido.tamanho }}<br /><br />
+            <strong>Sabores:</strong> {{ pedido.sabores.join(", ")
+            }}<br /><br />
+            <strong>Borda:</strong> {{ pedido.borda }}<br /><br />
           </p>
         </div>
-        <br />
 
-        <button id="butDelete" @click="removerPedidoBurgers(pedidoIndex)">
+        <button id="butDelete" @click="removerPedidoPizza(pedidoIndex)">
           Remover Pedido
         </button>
         <br />
         <br />
         <hr />
       </div>
+      <!------------------------->
+
       <div
         id="pedidoFundo"
         v-for="(pedido, pedidoIndex) in carrinho.macarronadas"
@@ -660,7 +642,7 @@ export default {
 
 .botao1 {
   background-color: #f25430;
-  color: #000000;
+  color: #ffffff;
   border: none;
   padding: 5px 10px;
   font-size: 20px;
@@ -675,7 +657,7 @@ export default {
 
 .botao2 {
   background-color: #f25430;
-  color: #000000;
+  color: #ffffff;
   border: none;
   padding: 5px 10px;
   font-size: 20px;
