@@ -15,7 +15,6 @@ const props = defineProps(["data"]);
               <p style="color: rgba(0, 0, 0, 0.596)">{{ data.descricao }}</p>
             </div>
             <h3 class="card__price"></h3>
-
             <button class="card__add">+</button>
           </div>
         </article>
