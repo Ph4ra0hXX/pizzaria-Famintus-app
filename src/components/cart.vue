@@ -2,9 +2,15 @@
 import { ref, computed } from "vue";
 import { carrinhoStore } from "../store/produtos";
 import { useRoute } from "vue-router";
+
 export default {
   setup() {
     const carrinho = carrinhoStore();
+
+    // Computed para acessar o valor total
+    const totalValor = computed(() => {
+      return carrinho.valorTotal; // Acessa o getter 'valorTotal' da store
+    });
 
     const routeName = computed(() => {
       return useRoute().name;
@@ -13,10 +19,12 @@ export default {
     return {
       carrinho,
       routeName,
+      totalValor, // Retorna o computed para o template
     };
   },
 };
 </script>
+
 <template>
   <div v-if="routeName != 'checkout'">
     <router-link to="/checkout">
@@ -31,7 +39,8 @@ export default {
       <div>
         <a href="#" class="float">
           <div class="box-preco">
-            <span class="preco">R$: 32</span>
+            <!-- Aqui você utiliza o totalValor em vez de um valor fixo -->
+            <span class="preco">R$: {{ totalValor }}</span>
           </div>
         </a>
       </div>

@@ -1,5 +1,35 @@
 import { defineStore } from "pinia";
 
+// Definindo a função fora da store
+function calcularTotal(pedidos) {
+  let total = 0;
+
+  pedidos.forEach((pedido) => {
+    if (pedido.preco) {
+      total += parseFloat(pedido.preco);
+    }
+
+    if (pedido.batataFrita) {
+      pedido.batataFrita.forEach((item) => {
+        if (item.quantidade >= 1) {
+          total += item.preco * item.quantidade;
+        }
+      });
+    }
+
+    if (pedido.tipos) {
+      pedido.tipos.forEach((item) => {
+        if (item.quantidade >= 1) {
+          total += item.preco * item.quantidade;
+        }
+      });
+    }
+  });
+
+  return total.toFixed(2);
+}
+
+// A store carrinhoStore
 export const carrinhoStore = defineStore("carrinho", {
   state: () => {
     return {
@@ -31,9 +61,23 @@ export const carrinhoStore = defineStore("carrinho", {
         state,
       };
     },
+    itensCarrinho(state) {
+      return [
+        ...state.burgers,
+        ...state.macarronadas,
+        ...state.batatas,
+        ...state.combos,
+        ...state.bebidas,
+        ...state.sobremesas,
+        ...state.pedidos,
+      ];
+    },
+    valorTotal(state) {
+      // Chama a função calcularTotal com os itens do carrinho
+      return calcularTotal(this.itensCarrinho);
+    },
   },
 });
-
 export const produtosStore = defineStore("produto", {
   state: () => {
     return {

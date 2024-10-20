@@ -382,7 +382,7 @@ export default {
 
       carrinho.burgers.push(pedido);
 
-      console.log(carrinho.carrinhoCompleto);
+      console.log(JSON.stringify(carrinho.itensCarrinho));
 
       const toast = useToast();
 
@@ -394,9 +394,6 @@ export default {
         icon: false,
         showCloseButtonOnHover: true,
       });
-
-      // Salva o pedido (por exemplo, envia para uma API ou console.log)
-      console.log("Pedido salvo:", pedido);
     },
 
     // Reseta os sabores e a borda ao trocar o tamanho
