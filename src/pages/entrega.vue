@@ -543,7 +543,7 @@ export default {
   margin-right: 10px;
 }
 .checkout-card .title span {
-  color: #fdd426;
+  color: #f25430;
 }
 .checkout-card .title p {
   font-size: 1.3rem;
@@ -587,9 +587,9 @@ export default {
   cursor: pointer;
 }
 .price-card input[type="radio"]:checked ~ label {
-  border: 1px solid #fdd426;
+  border: 1px solid #f25430;
   background: #e4ec0d23;
-  color: #fdd426;
+  color: #f25430;
   outline: none;
   border-width: 2px;
 }
@@ -598,7 +598,7 @@ export default {
   height: auto;
   border: 0;
 
-  accent-color: #fdd426;
+  accent-color: #f25430;
   transform: scale(1.5);
 }
 .price-card .content {
@@ -639,7 +639,7 @@ export default {
   border: 1px solid #9ea0a9;
 }
 .input-field input:focus {
-  border: 1px solid #fdd426;
+  border: 1px solid #f25430;
   outline: none;
 }
 .grid {
@@ -661,7 +661,7 @@ export default {
   width: 100%;
   padding: 1rem;
   letter-spacing: 0.8px;
-  background: #fdd426;
+  background: #f25430;
   border: none;
   color: #fff;
   border-radius: 3px;

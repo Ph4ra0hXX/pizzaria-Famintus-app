@@ -491,7 +491,7 @@ export default {
 }
 #quantidadeDiv {
   font-weight: bold;
-  color: #fdd426;
+  color: #f25430;
   font-size: 20px;
 }
 
@@ -522,7 +522,7 @@ export default {
 }
 
 .botao1 {
-  background-color: #f2cb05;
+  background-color: #f25430;
   color: #000000;
   border: none;
   padding: 5px 10px;
@@ -537,7 +537,7 @@ export default {
 }
 
 .botao2 {
-  background-color: #f2cb05;
+  background-color: #f25430;
   color: #000000;
   border: none;
   padding: 5px 10px;

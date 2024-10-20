@@ -33,7 +33,7 @@ function isWednesdayOrThursday() {
 
 <style>
 #fechados {
-  color: #fdd426;
+  color: #f25430;
   text-align: center;
   font-family: Barlow-SemiBold;
   padding-bottom: 30px;

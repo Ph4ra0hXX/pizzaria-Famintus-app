@@ -1,14 +1,14 @@
 <script>
-import { ref, watch, onUpdated } from "vue"
-import { carrinhoStore } from "../store/produtos"
-import { useToast } from "vue-toastification"
-import router from "../router/index"
+import { ref, watch, onUpdated } from "vue";
+import { carrinhoStore } from "../store/produtos";
+import { useToast } from "vue-toastification";
+import router from "../router/index";
 
 export default {
   setup() {
-    const toast = useToast()
+    const toast = useToast();
 
-    const carrinho = carrinhoStore()
+    const carrinho = carrinhoStore();
 
     const Macarronada = ref({
       macarrao: [{ nome: "Macarrão Talharim", quantidade: 1, preco: 15 }],
@@ -24,33 +24,33 @@ export default {
         { nome: "Milho Verde", quantidade: 0, preco: 0 },
         { nome: "Orégano", quantidade: 0, preco: 0 },
       ],
-    })
+    });
 
     function salvarPedido() {
-      carrinho.macarronadas.push(Macarronada.value)
+      carrinho.macarronadas.push(Macarronada.value);
 
-      router.push("/")
+      router.push("/");
 
       toast.success("Adicionado com sucesso!", {
         timeout: 2000,
         position: "top-right",
         icon: false,
         showCloseButtonOnHover: true,
-      })
+      });
     }
 
     function voltar() {
-      router.push("/")
+      router.push("/");
     }
 
     function updateQuantities(selectedItem) {
       this.Macarronada.carnes.forEach((item) => {
         if (item === selectedItem) {
-          item.quantidade = 1
+          item.quantidade = 1;
         } else {
-          item.quantidade = 0
+          item.quantidade = 0;
         }
-      })
+      });
     }
 
     return {
@@ -58,9 +58,9 @@ export default {
       salvarPedido,
       updateQuantities,
       voltar,
-    }
+    };
   },
-}
+};
 </script>
 
 <template>
@@ -157,12 +157,12 @@ export default {
 }
 #quantidadeDiv {
   font-weight: bold;
-  color: #fdd426;
+  color: #f25430;
   font-size: 20px;
 }
 
 #textDividers {
-  color: #fdd426;
+  color: #f25430;
   font-family: "Great Vibes";
   font-size: 40px;
   font-weight: lighter;
@@ -188,7 +188,7 @@ export default {
 }
 
 .botao1 {
-  background-color: #f2cb05;
+  background-color: #f25430;
   color: #000000;
   border: none;
   padding: 5px 10px;
@@ -203,7 +203,7 @@ export default {
 }
 
 .botao2 {
-  background-color: #f2cb05;
+  background-color: #f25430;
   color: #000000;
   border: none;
   padding: 5px 10px;

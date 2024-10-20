@@ -3,16 +3,19 @@ import { defineStore } from "pinia";
 // Definindo a função fora da store
 function calcularTotal(pedidos) {
   let total = 0;
+  let totalItens = 0; // Variável para contar a quantidade total de itens
 
   pedidos.forEach((pedido) => {
     if (pedido.preco) {
       total += parseFloat(pedido.preco);
+      totalItens += 1; // Contar o pedido como um item
     }
 
     if (pedido.batataFrita) {
       pedido.batataFrita.forEach((item) => {
         if (item.quantidade >= 1) {
           total += item.preco * item.quantidade;
+          totalItens += item.quantidade; // Adiciona a quantidade de batatas fritas
         }
       });
     }
@@ -21,12 +24,17 @@ function calcularTotal(pedidos) {
       pedido.tipos.forEach((item) => {
         if (item.quantidade >= 1) {
           total += item.preco * item.quantidade;
+          totalItens += item.quantidade; // Adiciona a quantidade de tipos
         }
       });
     }
   });
 
-  return total.toFixed(2);
+  // Retorna um objeto com o total e a quantidade de itens
+  return {
+    total: total.toFixed(2),
+    getTotalPedidos: totalItens,
+  };
 }
 
 // A store carrinhoStore
@@ -52,6 +60,7 @@ export const carrinhoStore = defineStore("carrinho", {
       pedidos: [],
       valorTotal: 0,
       quantidadeDeItens: 0,
+      getTotalPedidos: 0,
       observacao: "",
     };
   },
@@ -61,6 +70,12 @@ export const carrinhoStore = defineStore("carrinho", {
         state,
       };
     },
+    valorTotal(state) {
+      const { total, getTotalPedidos } = calcularTotal(this.itensCarrinho);
+      state.getTotalPedidos = getTotalPedidos; // Atualiza a quantidade total na store
+      return total;
+    },
+
     itensCarrinho(state) {
       return [
         ...state.burgers,

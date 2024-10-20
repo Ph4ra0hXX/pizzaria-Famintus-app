@@ -582,7 +582,7 @@ export default {
       </div>
     </div>
     <div class="paypal__footer">
-      <div id="pricecheck">Total: 32</div>
+      <div id="pricecheck">Total: {{ carrinho.valorTotal.total }}</div>
 
       <div class="detail-info">
         <br />
@@ -659,7 +659,7 @@ export default {
 }
 
 .botao1 {
-  background-color: #f2cb05;
+  background-color: #f25430;
   color: #000000;
   border: none;
   padding: 5px 10px;
@@ -674,7 +674,7 @@ export default {
 }
 
 .botao2 {
-  background-color: #f2cb05;
+  background-color: #f25430;
   color: #000000;
   border: none;
   padding: 5px 10px;
@@ -765,7 +765,7 @@ textarea {
   width: 100%;
   padding: 1rem;
   letter-spacing: 0.8px;
-  background: #fdd426;
+  background: #f25430;
   border: none;
   color: #fff;
   border-radius: 3px;
@@ -774,7 +774,7 @@ textarea {
   font-family: Barlow-SemiBold;
 }
 .btn:hover {
-  background: #fdd426;
+  background: #f25430;
   letter-spacing: 1px;
   box-shadow: 1px 4px 8px rgba(242, 113, 65, 0.2);
 }
@@ -853,7 +853,7 @@ textarea {
 
 .paypal__subheader {
   padding: 0 45px 0 40px;
-  border-left: 5px solid #fdd426;
+  border-left: 5px solid #f25430;
 }
 
 .paypal__username {

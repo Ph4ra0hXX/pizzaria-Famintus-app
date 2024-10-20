@@ -7,11 +7,6 @@ export default {
   setup() {
     const carrinho = carrinhoStore();
 
-    // Computed para acessar o valor total
-    const totalValor = computed(() => {
-      return carrinho.valorTotal; // Acessa o getter 'valorTotal' da store
-    });
-
     const routeName = computed(() => {
       return useRoute().name;
     });
@@ -19,7 +14,6 @@ export default {
     return {
       carrinho,
       routeName,
-      totalValor, // Retorna o computed para o template
     };
   },
 };
@@ -30,7 +24,8 @@ export default {
     <router-link to="/checkout">
       <div>
         <a href="#" class="float2">
-          <div class="numcircle">{{ carrinho.getTotalPedidos }}</div>
+          <div class="numcircle">{{ carrinho.valorTotal.getTotalPedidos }}</div>
+          <!-- Aqui você mostra a quantidade total de pedidos -->
           <div class="box-preco">
             <span class="carrinho">🛒</span>
           </div>
@@ -39,8 +34,7 @@ export default {
       <div>
         <a href="#" class="float">
           <div class="box-preco">
-            <!-- Aqui você utiliza o totalValor em vez de um valor fixo -->
-            <span class="preco">R$: {{ totalValor }}</span>
+            <span class="preco">R$: {{ carrinho.valorTotal.total }}</span>
           </div>
         </a>
       </div>
@@ -55,7 +49,7 @@ export default {
   height: 40px;
   bottom: 40px;
   right: 40px;
-  background-color: #fdd426;
+  background-color: #f25430;
   color: #000000;
   border-radius: 50px;
   z-index: 30;
@@ -78,7 +72,7 @@ export default {
   background-color: #141414;
   border-width: 2px;
   border-style: solid;
-  border-color: #fdd426;
+  border-color: #f25430;
   border-radius: 50px;
   z-index: 30;
   display: flex;
@@ -104,7 +98,7 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #fdd426;
+  background-color: #f25430;
   color: rgb(0, 0, 0);
   font-family: Barlow-SemiBold;
   font-size: 15px;

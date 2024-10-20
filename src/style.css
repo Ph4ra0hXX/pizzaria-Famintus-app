@@ -152,7 +152,7 @@ label {
 }
 
 .container-checkbox input:checked ~ .checkmark {
-  background-color: #fdd426;
+  background-color: #f25430;
 }
 
 .container-checkbox .checkmark:after {
@@ -183,7 +183,7 @@ label {
 
 #categoria {
   font-family: Barlow-Black;
-  color: #fdd426;
+  color: #f25430;
   font-size: 25px;
   display: block;
   margin-bottom: 20px;
@@ -252,7 +252,7 @@ a {
   padding: 15px 30px;
   border-radius: 3px;
   border: 0;
-  background-color: #fdd426;
+  background-color: #f25430;
   cursor: pointer;
   font-family: Barlow-SemiBold;
   font-size: 15px;
@@ -310,7 +310,7 @@ a {
 }
 
 #fixedContainer2 {
-  background-color: #f2cb05;
+  background-color: #f25430;
   position: fixed;
   margin-top: 462px;
   width: 100px;
@@ -339,7 +339,7 @@ a {
 }
 
 #itens {
-  color: #f2cb05;
+  color: #f25430;
   font-family: Barlow-SemiBold;
   font-size: 14px;
   line-height: 1.5;
@@ -353,7 +353,7 @@ a {
   align-items: center;
   height: 50px;
   border-radius: 8px 8px 8px 0;
-  background: #f2cb05;
+  background: #f25430;
   z-index: 99;
   position: absolute;
   font-family: Barlow-SemiBold;
