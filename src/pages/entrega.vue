@@ -18,7 +18,7 @@ export default {
 
     function copyToClipboard() {
       navigator.clipboard
-        .writeText("88994634270")
+        .writeText("Pix De teste")
         .then(() => {
           toast.success("Pix copiado!", {
             timeout: 2000,
@@ -34,31 +34,19 @@ export default {
       this.pedidoMontado = "";
 
       var dados = this.carrinho.burgers;
-
       if (dados.length > 0) {
-        this.pedidoMontado += "*Burger*\n\n";
+        this.pedidoMontado += "*Pizzas*\n\n";
 
         const resultado = dados
-          .map((categoria) => {
-            return Object.keys(categoria)
-              .map((chave) => {
-                const itensComQuantidade = categoria[chave].filter(
-                  (item) => item.quantidade > 0
-                );
+          .map((pizza) => {
+            // Cria a linha para cada pizza com seus atributos
+            const tamanho = `Tamanho: ${pizza.tamanho}`;
+            const sabores = `Sabores: ${pizza.sabores.join(", ")}`;
+            const borda = `Borda: ${pizza.borda}`;
 
-                if (itensComQuantidade.length > 0) {
-                  const categoriaFormatada = `${itensComQuantidade
-                    .map((item) => ` *${item.quantidade}x* ${item.nome}`)
-                    .join("\n")}`;
-                  return `${categoriaFormatada}\n`;
-                } else {
-                  return null;
-                }
-              })
-              .filter((categoria) => categoria !== null)
-              .join("\n");
+            // Retorna uma string formatada com todas as informações da pizza
+            return `${tamanho}\n${sabores}\n${borda}\n`;
           })
-          .filter((categoria) => categoria !== null)
           .join(`\n${"-".repeat(30)}\n\n`);
 
         this.pedidoMontado += resultado;
@@ -104,7 +92,7 @@ export default {
       var dados3 = this.carrinho.batatas;
 
       if (dados3.length > 0) {
-        this.pedidoMontado += "\n*Batata Frita*\n\n";
+        this.pedidoMontado += "*Batata Frita*\n\n";
 
         const resultado3 = dados3
           .map((categoria) => {
@@ -194,14 +182,10 @@ export default {
         this.pedidoMontado += resultado4;
       }
 
-      if (dados4.length > 0) {
-        this.pedidoMontado += `\n${"-".repeat(30)}\n\n`;
-      }
-
       var dados5 = this.carrinho.combos;
 
       if (dados5.length > 0) {
-        this.pedidoMontado += "\n*Combo*\n\n";
+        this.pedidoMontado += "\n*Batata Frita*\n\n";
 
         const resultado5 = dados5
           .map((categoria) => {
@@ -244,7 +228,7 @@ export default {
             this.pedidoMontado += `\n*Troco para:*\n - ${this.carrinho.dadosPessoais.troco}\n`;
           }
           this.pedidoMontado += `\n${"-".repeat(30)}\n`;
-          this.pedidoMontado += `\n*Total:* _${this.carrinho.getValorTotal}_\n`;
+          this.pedidoMontado += `\n*Total:* _${this.carrinho.valorTotal.total}_\n`;
 
           this.pedidoMontado = encodeURIComponent(this.pedidoMontado);
 
@@ -281,7 +265,7 @@ export default {
           }
           this.pedidoMontado += `\n${"-".repeat(30)}\n`;
           this.pedidoMontado += `\n*Total:* _${(
-            Number(this.carrinho.getValorTotal) + 3
+            Number(this.carrinho.valorTotal.total) + 3
           ).toFixed(2)}_\n`;
 
           this.pedidoMontado = encodeURIComponent(this.pedidoMontado);
