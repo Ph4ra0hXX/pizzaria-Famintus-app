@@ -5,7 +5,7 @@ import Footer from "./components/footer.vue";
 
 <template>
   <router-link to="/">
-    <img src="/logo.png" id="logo" alt="logo" />
+    <img src="/logo.webp" id="logo" alt="logo" />
   </router-link>
   <Cart />
   <router-view />
@@ -15,7 +15,7 @@ import Footer from "./components/footer.vue";
 <style>
 body {
   background-color: #141414;
-  background-image: url(/fundo.png);
+  background-image: url(/fundo.webp);
   margin: 0;
 }
 </style>
