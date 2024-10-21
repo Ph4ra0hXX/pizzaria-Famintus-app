@@ -36,7 +36,7 @@ export default {
     }
 
     function checarSeCarrinhoNaoEstaVazio() {
-      if (carrinho.getTotalPedidos > 0) {
+      if (carrinho.valorTotal.getTotalPedidos > 0) {
         router.push("/entrega");
       } else {
         toast.warning("🛒 Carrinho vazio!", {
@@ -274,6 +274,7 @@ export default {
 
 <template>
   <div class="paypal">
+    <br />
     <div class="paypal__subheader-wrapper">
       <div class="paypal__subheader">
         <h1 class="paypal__username">Olá 👋</h1>
