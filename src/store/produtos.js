@@ -151,7 +151,7 @@ export const produtosStore2 = defineStore("produto2", {
         {
           id: 1,
           nome: "PIZZAS",
-          img: "food1.webp",
+          img: "food.webp",
           descricao: "Para começar bem",
           url: "/burger",
         },
