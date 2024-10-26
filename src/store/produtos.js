@@ -111,6 +111,13 @@ export const produtosStore = defineStore("produto", {
           descricao: "Monte do seu jeito",
           url: "/burger",
         },
+        {
+          id: 1,
+          nome: "PIZZAS SEM BORDA",
+          img: "food7.webp",
+          descricao: "Monte do seu jeito",
+          url: "/pizzas",
+        },
         /*{
           id: 6,
           nome: "BATATA FRITA",
@@ -151,9 +158,16 @@ export const produtosStore2 = defineStore("produto2", {
         {
           id: 1,
           nome: "PIZZAS",
-          img: "food.webp",
+          img: "food7.webp",
           descricao: "Para começar bem",
           url: "/burger",
+        },
+        {
+          id: 1,
+          nome: "PIZZAS SEM BORDA",
+          img: "pizza.webp",
+          descricao: "Monte do seu jeito",
+          url: "/pizzas",
         },
         /*  {
           id: 2,
