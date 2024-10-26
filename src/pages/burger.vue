@@ -4,7 +4,7 @@
       <div class="pizza-builder">
         <div class="dotted-line">
           <hr />
-          <span id="textDividers">Escolha o tamanho</span>
+          <span id="textDividers">Escolha o tamanho:</span>
           <hr />
         </div>
         <div>
@@ -23,7 +23,7 @@
         <div>
           <div class="dotted-line">
             <hr />
-            <span id="textDividers">Escolha os sabores</span>
+            <span id="textDividers">Escolha os sabores:</span>
             <hr />
           </div>
           <div
@@ -59,7 +59,7 @@
         <!-- Novo Seletor para escolher a borda -->
         <div class="dotted-line">
           <hr />
-          <span id="textDividers">Escolha a borda</span>
+          <span id="textDividers">Escolha a borda:</span>
           <hr />
         </div>
         <div>
@@ -100,18 +100,18 @@ import { carrinhoStore } from "../store/produtos";
 export default {
   data() {
     return {
-      selectedSize: "P", // Tamanho selecionado (Pequena por padrão)
-      selectedFlavors: [], // Sabores selecionados
-      selectedCrust: "", // Borda selecionada
+      selectedSize: "P",
+      selectedFlavors: [],
+      selectedCrust: "",
       flavors: [
         {
           name: "Calabresa",
           ingredients:
             "Massa Famintu's, molho especial, mussarela, calabresa, cebola, milho, orégano.",
           prices: {
-            P: 30.0,
-            G: 40.0,
-            GG: 50.0,
+            P: 27.0,
+            G: 42.0,
+            GG: 53.0,
           },
         },
         {
@@ -119,9 +119,9 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, calabresa, ovo, presunto, cebola, tomate, pimentão, milho, orégano.",
           prices: {
-            P: 32.0,
+            P: 27.0,
             G: 42.0,
-            GG: 52.0,
+            GG: 53.0,
           },
         },
         {
@@ -129,9 +129,9 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, catupiry, cheddar, queijo coalho em cubos, cebola, orégano.",
           prices: {
-            P: 35.0,
-            G: 45.0,
-            GG: 55.0,
+            P: 27.0,
+            G: 42.0,
+            GG: 53.0,
           },
         },
         {
@@ -139,9 +139,9 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, frango, cebola, tomate, milho, orégano.",
           prices: {
-            P: 31.0,
-            G: 41.0,
-            GG: 51.0,
+            P: 27.0,
+            G: 42.0,
+            GG: 53.0,
           },
         },
         {
@@ -149,9 +149,9 @@ export default {
           ingredients:
             "Massa Famintu's, molo especial, mussarela, frango, carne de sol, calabresa, bacon, catupiry, cebola, tomate, milho, orégano.",
           prices: {
-            P: 38.0,
-            G: 48.0,
-            GG: 58.0,
+            P: 30.0,
+            G: 46.0,
+            GG: 60.0,
           },
         },
         {
@@ -159,8 +159,8 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, presunto, cebola, tomate, milho, orégano.",
           prices: {
-            P: 33.0,
-            G: 43.0,
+            P: 27.0,
+            G: 42.0,
             GG: 53.0,
           },
         },
@@ -169,9 +169,9 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, manjericão, tomate, orégano.",
           prices: {
-            P: 29.0,
-            G: 39.0,
-            GG: 49.0,
+            P: 27.0,
+            G: 42.0,
+            GG: 53.0,
           },
         },
         {
@@ -179,9 +179,9 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, frango, catupiry, cebola, milho, orégano.",
           prices: {
-            P: 34.0,
-            G: 44.0,
-            GG: 54.0,
+            P: 27.0,
+            G: 43.0,
+            GG: 55.0,
           },
         },
         {
@@ -189,7 +189,7 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, carne de sol, catupiry, cebola, orégano.",
           prices: {
-            P: 36.0,
+            P: 29.0,
             G: 46.0,
             GG: 56.0,
           },
@@ -199,9 +199,9 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, frango, bacon, cebola, orégano.",
           prices: {
-            P: 33.0,
-            G: 43.0,
-            GG: 53.0,
+            P: 30.0,
+            G: 44.0,
+            GG: 60.0,
           },
         },
         {
@@ -209,8 +209,8 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, carne de sol, cebola, milho, orégano.",
           prices: {
-            P: 35.0,
-            G: 45.0,
+            P: 28.0,
+            G: 42.0,
             GG: 55.0,
           },
         },
@@ -219,9 +219,9 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, carne de sol, queijo coalho em cubos, cream cheese, cebola roxa, tomate, orégano.",
           prices: {
-            P: 37.0,
-            G: 47.0,
-            GG: 57.0,
+            P: 35.0,
+            G: 62.0,
+            GG: 75.0,
           },
         },
         {
@@ -229,9 +229,9 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, calabresa, bacon, cream cheese, cebola roxa, orégano.",
           prices: {
-            P: 36.0,
-            G: 46.0,
-            GG: 56.0,
+            P: 33.0,
+            G: 55.0,
+            GG: 70.0,
           },
         },
         {
@@ -239,9 +239,9 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, frango cremoso, cream cheese, cebola, orégano.",
           prices: {
-            P: 35.0,
-            G: 45.0,
-            GG: 55.0,
+            P: 33.0,
+            G: 61.0,
+            GG: 75.0,
           },
         },
         {
@@ -249,9 +249,9 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, linguiça toscana, cream cheese, cebola caramelizada, orégano.",
           prices: {
-            P: 38.0,
-            G: 48.0,
-            GG: 58.0,
+            P: 33.0,
+            G: 61.0,
+            GG: 73.0,
           },
         },
         {
@@ -259,9 +259,9 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, frango desfiado, bacon, cream cheese, cebola roxa, milho, orégano.",
           prices: {
-            P: 39.0,
-            G: 49.0,
-            GG: 59.0,
+            P: 33.0,
+            G: 61.0,
+            GG: 75.0,
           },
         },
         {
@@ -269,9 +269,9 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, camarão cremoso, cebola, tomate, milho, orégano.",
           prices: {
-            P: 42.0,
-            G: 52.0,
-            GG: 62.0,
+            P: 37.0,
+            G: 70.0,
+            GG: 85.0,
           },
         },
         {
@@ -279,9 +279,9 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, molho especial de salsicha, cebola, milho, batata palha, orégano.",
           prices: {
-            P: 33.0,
-            G: 43.0,
-            GG: 53.0,
+            P: 31.0,
+            G: 50.0,
+            GG: 65.0,
           },
         },
         {
@@ -289,9 +289,9 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, lombo, cebola, milho, orégano.",
           prices: {
-            P: 35.0,
-            G: 45.0,
-            GG: 55.0,
+            P: 30.0,
+            G: 60.0,
+            GG: 70.0,
           },
         },
         {
@@ -299,9 +299,9 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, tomate, cebola roxa, cream cheese, milho, orégano.",
           prices: {
-            P: 37.0,
-            G: 47.0,
-            GG: 57.0,
+            P: 33.0,
+            G: 55.0,
+            GG: 70.0,
           },
         },
         {
@@ -309,9 +309,9 @@ export default {
           ingredients:
             "Massa Famintu's, mussarela, chocolate ao leite, pedaços de brownie.",
           prices: {
-            P: 38.0,
-            G: 48.0,
-            GG: 58.0,
+            P: 26.0,
+            G: 50.0,
+            GG: 60.0,
           },
         },
         {
@@ -319,9 +319,9 @@ export default {
           ingredients:
             "Massa Famintu's, mussarela, discos de banana, canela, leite condensado.",
           prices: {
-            P: 35.0,
-            G: 45.0,
-            GG: 55.0,
+            P: 25.0,
+            G: 50.0,
+            GG: 60.0,
           },
         },
         {
@@ -329,9 +329,9 @@ export default {
           ingredients:
             "Massa Famintu's, mussarela, chocolate ao leite com ovomaltine.",
           prices: {
-            P: 36.0,
-            G: 46.0,
-            GG: 56.0,
+            P: 32.0,
+            G: 64.0,
+            GG: 80.0,
           },
         },
         {
@@ -339,9 +339,9 @@ export default {
           ingredients:
             "Massa Famintu's, mussarela, chocolate ao leite, disquete.",
           prices: {
-            P: 37.0,
-            G: 47.0,
-            GG: 57.0,
+            P: 26.0,
+            G: 50.0,
+            GG: 60.0,
           },
         },
         {
@@ -349,22 +349,20 @@ export default {
           ingredients:
             "Massa Famintu's, mussarela, chocolate ao leite, morango fatiado.",
           prices: {
-            P: 39.0,
-            G: 49.0,
-            GG: 59.0,
+            P: 32.0,
+            G: 64.0,
+            GG: 84.0,
           },
         },
       ],
-      // Preços para bordas
       crustPrices: {
         chocolate: { P: 9.0, G: 11.0, GG: 15.0 },
         "cream-cheese": { P: 9.0, G: 15.0, GG: 20.0 },
-        catupiry: { P: 0, G: 0, GG: 0 }, // Borda grátis
+        catupiry: { P: 0, G: 0, GG: 0 },
       },
     };
   },
   computed: {
-    // Verifica se pode adicionar mais sabores, de acordo com o tamanho
     isFlavorDisabled() {
       const maxFlavors = this.selectedSize === "GG" ? 3 : 2;
       return this.selectedFlavors.length >= maxFlavors;
@@ -382,7 +380,7 @@ export default {
 
       carrinho.burgers.push(pedido);
 
-      console.log(JSON.stringify(carrinho.itensCarrinho));
+      console.log(carrinho.carrinhoCompleto);
 
       const toast = useToast();
 
@@ -394,9 +392,10 @@ export default {
         icon: false,
         showCloseButtonOnHover: true,
       });
+
+      console.log("Pedido salvo:", pedido);
     },
 
-    // Reseta os sabores e a borda ao trocar o tamanho
     resetFlavors() {
       this.selectedFlavors = [];
       this.selectedCrust = "";
@@ -405,11 +404,9 @@ export default {
       router.push("/");
     },
 
-    // Calcula o maior preço com base nos sabores e no preço da borda
     getHighestPrice() {
       let highestPrice = 0;
 
-      // Encontra o maior preço entre os sabores selecionados
       this.selectedFlavors.forEach((flavor) => {
         const selectedFlavor = this.flavors.find((f) => f.name === flavor);
         if (selectedFlavor) {
@@ -420,25 +417,19 @@ export default {
         }
       });
 
-      // Adicionar o preço da borda, se aplicável
       if (this.selectedCrust && this.crustPrices[this.selectedCrust]) {
         const crustPrice =
           this.crustPrices[this.selectedCrust][this.selectedSize];
         highestPrice += crustPrice;
       }
 
-      return highestPrice.toFixed(2); // Retorna o preço total formatado
+      return highestPrice.toFixed(2);
     },
   },
 };
 </script>
 
 <style scoped>
-#butOpcoes {
-  background-color: #f25430;
-  color: white;
-}
-
 .flavor-ingredients {
   color: white;
   font-family: "system-ui";
@@ -491,7 +482,7 @@ export default {
 }
 #quantidadeDiv {
   font-weight: bold;
-  color: #f25430;
+  color: #fdd426;
   font-size: 20px;
 }
 
@@ -522,7 +513,7 @@ export default {
 }
 
 .botao1 {
-  background-color: #f25430;
+  background-color: #f2cb05;
   color: #000000;
   border: none;
   padding: 5px 10px;
@@ -537,7 +528,7 @@ export default {
 }
 
 .botao2 {
-  background-color: #f25430;
+  background-color: #f2cb05;
   color: #000000;
   border: none;
   padding: 5px 10px;

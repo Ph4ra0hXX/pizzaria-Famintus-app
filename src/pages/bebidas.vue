@@ -15,7 +15,7 @@ export default {
         { nome: "Coca Zero Lata", quantidade: 0, preco: 6.0 },
         { nome: "Guaraná Lata", quantidade: 0, preco: 5.0 },
         { nome: "Coca Lata", quantidade: 0, preco: 5.0 },
-        { nome: "Coca 600ML", quantidade: 0, preco: 6.0 },
+        { nome: "Coca 600ML", quantidade: 0, preco: 7.0 },
         { nome: "Coca 1 Litro", quantidade: 0, preco: 8.0 },
         { nome: "Guaraná 1 Litro", quantidade: 0, preco: 8.0 },
         { nome: "Cajuina 1 Litro", quantidade: 0, preco: 8.0 },
