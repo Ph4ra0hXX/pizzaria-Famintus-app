@@ -234,7 +234,7 @@ export default {
 
           carrinho.pedidos = [];
 
-          window.location.href = `https://wa.me/5588997542121?text=${this.pedidoMontado}`;
+          window.location.href = `https://wa.me/558881923223?text=${this.pedidoMontado}`;
         } else {
           toast.warning("✏️ Preencha todos os campos", {
             timeout: 2000,
@@ -272,7 +272,7 @@ export default {
 
           carrinho.pedidos = [];
 
-          window.location.href = `https://wa.me/5588997542121?text=${this.pedidoMontado}`;
+          window.location.href = `https://wa.me/558881923223?text=${this.pedidoMontado}`;
         } else {
           toast.warning("✏️ Preencha todos os campos", {
             timeout: 2000,

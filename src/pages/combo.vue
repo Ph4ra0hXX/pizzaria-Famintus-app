@@ -19,21 +19,8 @@ export default {
           descricao: "Batata palito.",
         },
         {
-          nome: "Bolinhas de Carne de Sol",
-          preco: 17.0,
-          quantidade: 0,
-          descricao: "10 Unidades.",
-        },
-        {
-          nome: "Calabresa Acebolada",
-          preco: 15.0,
-          quantidade: 0,
-          descricao:
-            "Linguiça calabresa frinta com um toque especial de cebola roxa.",
-        },
-        {
           nome: "Carne de Sol Acebolada com Fritas",
-          preco: 42.0,
+          preco: 44.0,
           quantidade: 0,
           descricao:
             "Carne de Sol Famintu's acompanhada de batata frita, farofa e arroz.",
