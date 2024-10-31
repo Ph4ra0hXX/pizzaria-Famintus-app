@@ -52,13 +52,31 @@
               </span>
             </div>
             <p class="flavor-ingredients">{{ flavor.ingredients }}</p>
-            <br />
           </div>
         </div>
 
         <!-- Novo Seletor para escolher a borda -->
+        <div class="dotted-line">
+          <hr />
+          <span id="textDividers">Escolha a borda:</span>
+          <hr />
+        </div>
+        <div>
+          <select id="selectTamanho" v-model="selectedCrust">
+            <option value="">Sem borda</option>
+            <option value="chocolate">
+              Chocolate (R$
+              {{ crustPrices.chocolate[selectedSize].toFixed(2) }})
+            </option>
+            <option value="cream-cheese">
+              Cream Cheese (R$
+              {{ crustPrices["cream-cheese"][selectedSize].toFixed(2) }})
+            </option>
+          </select>
+        </div>
       </div>
-
+      <br />
+      <br />
       <br />
 
       <button @click="salvarPedido" id="butOpcoes" type="submit" value="Submit">
