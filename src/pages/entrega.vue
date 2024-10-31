@@ -16,9 +16,27 @@ export default {
 
     const apesoEscolhido = ref(0);
 
+    const taxaLocalidade = ref([
+      { nome: "Centro", preco: 3.0 },
+      { nome: "Bom nome", preco: 4.0 },
+      { nome: "Boa fé", preco: 5.0 },
+      { nome: "Estrada das flores", preco: 5.0 },
+      { nome: "Brotolandia", preco: 3.0 },
+      { nome: "Populares", preco: 3.0 },
+      { nome: "Pitombeira", preco: 4.0 },
+      { nome: "Bom fim", preco: 6.0 },
+      { nome: "Cidade alta", preco: 6.0 },
+      { nome: "Morros", preco: 5.0 },
+      { nome: "São Raimundo", preco: 7.0 },
+      { nome: "Arraial", preco: 8.0 },
+      { nome: "Santa Luzia", preco: 4.0 },
+      { nome: "Monsenhor Otávio", preco: 4.0 },
+      { nome: "Pedra branca", preco: 7.0 },
+    ]);
+
     function copyToClipboard() {
       navigator.clipboard
-        .writeText("Pix De teste")
+        .writeText("60378669370")
         .then(() => {
           toast.success("Pix copiado!", {
             timeout: 2000,
@@ -34,19 +52,31 @@ export default {
       this.pedidoMontado = "";
 
       var dados = this.carrinho.burgers;
+
       if (dados.length > 0) {
-        this.pedidoMontado += "*Pizzas*\n\n";
+        //this.pedidoMontado += "*Burger*\n\n";
 
         const resultado = dados
-          .map((pizza) => {
-            // Cria a linha para cada pizza com seus atributos
-            const tamanho = `Tamanho: ${pizza.tamanho}`;
-            const sabores = `Sabores: ${pizza.sabores.join(", ")}`;
-            const borda = `Borda: ${pizza.borda}`;
+          .map((categoria) => {
+            return Object.keys(categoria)
+              .map((chave) => {
+                const itensComQuantidade = categoria[chave].filter(
+                  (item) => item.quantidade > 0
+                );
 
-            // Retorna uma string formatada com todas as informações da pizza
-            return `${tamanho}\n${sabores}\n${borda}\n`;
+                if (itensComQuantidade.length > 0) {
+                  const categoriaFormatada = `${itensComQuantidade
+                    .map((item) => ` *${item.quantidade}x* ${item.nome}`)
+                    .join("\n")}`;
+                  return `${categoriaFormatada}\n`;
+                } else {
+                  return null;
+                }
+              })
+              .filter((categoria) => categoria !== null)
+              .join("\n");
           })
+          .filter((categoria) => categoria !== null)
           .join(`\n${"-".repeat(30)}\n\n`);
 
         this.pedidoMontado += resultado;
@@ -61,7 +91,7 @@ export default {
       var dados2 = this.carrinho.macarronadas;
 
       if (dados2.length > 0) {
-        this.pedidoMontado += "\n*Macarronada*\n\n";
+        //this.pedidoMontado += "\n*Macarronada*\n\n";
 
         const resultado2 = dados2
           .map((categoria) => {
@@ -92,7 +122,7 @@ export default {
       var dados3 = this.carrinho.batatas;
 
       if (dados3.length > 0) {
-        this.pedidoMontado += "*Batata Frita*\n\n";
+        //this.pedidoMontado += "\n*Batata Frita*\n\n";
 
         const resultado3 = dados3
           .map((categoria) => {
@@ -123,7 +153,7 @@ export default {
       var dados6 = this.carrinho.sobremesas;
 
       if (dados6.length > 0) {
-        this.pedidoMontado += "\n*Sobremesas*\n\n";
+        //this.pedidoMontado += "\n*Sobremesas*\n\n";
 
         const resultado6 = dados6
           .map((categoria) => {
@@ -154,7 +184,7 @@ export default {
       var dados4 = this.carrinho.bebidas;
 
       if (dados4.length > 0) {
-        this.pedidoMontado += "\n*Bebidas*\n\n";
+        //this.pedidoMontado += "\n*Bebidas*\n\n";
 
         const resultado4 = dados4
           .map((categoria) => {
@@ -182,10 +212,14 @@ export default {
         this.pedidoMontado += resultado4;
       }
 
+      if (dados4.length > 0) {
+        this.pedidoMontado += `\n${"-".repeat(30)}\n\n`;
+      }
+
       var dados5 = this.carrinho.combos;
 
       if (dados5.length > 0) {
-        this.pedidoMontado += "\n*Batata Frita*\n\n";
+        //this.pedidoMontado += "\n*Combo*\n\n";
 
         const resultado5 = dados5
           .map((categoria) => {
@@ -234,7 +268,7 @@ export default {
 
           carrinho.pedidos = [];
 
-          window.location.href = `https://wa.me/558881923223?text=${this.pedidoMontado}`;
+          window.location.href = `https://wa.me/5588921508522?text=${this.pedidoMontado}`;
         } else {
           toast.warning("✏️ Preencha todos os campos", {
             timeout: 2000,
@@ -249,13 +283,13 @@ export default {
         if (
           this.carrinho.dadosPessoais.nome != "" &&
           this.carrinho.dadosPessoais.rua != "" &&
-          this.carrinho.dadosPessoais.bairro != "" &&
+          this.carrinho.dadosPessoais.bairro.nome != "" &&
           this.carrinho.dadosPessoais.numero != "" &&
           this.carrinho.dadosPessoais.formaDePagamento != ""
         ) {
           this.pedidoMontado += `\n*Nome:*\n - ${this.carrinho.dadosPessoais.nome}\n`;
           this.pedidoMontado += `\n*Rua:*\n - ${this.carrinho.dadosPessoais.rua}\n`;
-          this.pedidoMontado += `\n*Bairro:*\n - ${this.carrinho.dadosPessoais.bairro}\n`;
+          this.pedidoMontado += `\n*Bairro:*\n - ${this.carrinho.dadosPessoais.bairro.nome}\n`;
           this.pedidoMontado += `\n*Número:*\n - ${this.carrinho.dadosPessoais.numero}\n`;
           this.pedidoMontado += `\n*Ponto de referência:*\n - ${this.carrinho.dadosPessoais.referencia}\n`;
           this.pedidoMontado += `\n*Forma de entrega:*\n - ${this.carrinho.dadosPessoais.formaDeEntrega}\n`;
@@ -265,14 +299,15 @@ export default {
           }
           this.pedidoMontado += `\n${"-".repeat(30)}\n`;
           this.pedidoMontado += `\n*Total:* _${(
-            Number(this.carrinho.valorTotal.total) + 3
+            Number(this.carrinho.valorTotal.total) +
+            Number(this.carrinho.dadosPessoais.bairro.preco)
           ).toFixed(2)}_\n`;
 
           this.pedidoMontado = encodeURIComponent(this.pedidoMontado);
 
           carrinho.pedidos = [];
 
-          window.location.href = `https://wa.me/558881923223?text=${this.pedidoMontado}`;
+          window.location.href = `https://wa.me/5588921508522?text=${this.pedidoMontado}`;
         } else {
           toast.warning("✏️ Preencha todos os campos", {
             timeout: 2000,
@@ -289,6 +324,7 @@ export default {
       finalizarPedido,
       apesoEscolhido,
       copyToClipboard,
+      taxaLocalidade,
     };
   },
 };
@@ -381,12 +417,19 @@ export default {
           </div>
 
           <div class="input-field">
-            <input
+            <select
+              id="card_bairro"
               v-model="carrinho.dadosPessoais.bairro"
-              type="text"
-              id="card_number"
-              placeholder=""
-            />
+              name="select"
+            >
+              <option
+                v-for="(local, index) in taxaLocalidade"
+                :key="index"
+                :value="local"
+              >
+                {{ local.nome }} - {{ local.preco }}
+              </option>
+            </select>
           </div>
 
           <br />
@@ -459,6 +502,7 @@ export default {
           class="input-field"
         >
           <button id="butCopiarPix" @click="copyToClipboard">Copiar PIX</button>
+          <p id="beneficiario">Beneficiário: Dayse Mara da Silva</p>
         </div>
         <div
           v-if="carrinho.dadosPessoais.formaDePagamento == 'Dinheiro'"
@@ -477,10 +521,6 @@ export default {
             placeholder="troco para 50 reais"
           />
         </div>
-        <p id="textDescritivo">
-          Caso tenha escolhido entrega, o valor<br />
-          de 3 reais será somada ao total.<br />
-        </p>
 
         <button @click="finalizarPedido()" class="btn">finalizar</button>
       </div>
@@ -489,6 +529,18 @@ export default {
 </template>
 
 <style scoped>
+#card_bairro {
+  height: 45px;
+}
+
+#beneficiario {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #9ea0a9;
+  font-size: 15px;
+}
+
 #textDescritivo {
   margin-top: 10px;
 }
@@ -497,7 +549,7 @@ export default {
   background-color: #aff63c;
   height: 40px;
   border: 0;
-  color: #fff;
+  color: #000000;
   border-radius: 15px;
   cursor: pointer;
 }
@@ -505,6 +557,7 @@ export default {
 #formaDePagamento {
   display: flex;
 }
+
 .container {
   display: flex;
   align-items: center;
@@ -512,6 +565,7 @@ export default {
   margin: 0 auto;
   margin-bottom: 45px;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -519,6 +573,7 @@ export default {
   font-size: 100%;
   font-family: Barlow-SemiBold;
 }
+
 .checkout-card {
   background: #fff;
   max-width: 450px;
@@ -527,15 +582,18 @@ export default {
   margin-left: 10px;
   margin-right: 10px;
 }
+
 .checkout-card .title span {
   color: #f25430;
 }
+
 .checkout-card .title p {
   font-size: 1.3rem;
   font-family: Barlow-SemiBold;
   text-align: center;
   padding: 1rem;
 }
+
 .price-container {
   display: flex;
   gap: 0.95rem;
@@ -547,6 +605,7 @@ export default {
   gap: 0.3rem;
   justify-content: space-evenly;
 }
+
 .price-card {
   position: relative;
   /*   border:1px solid #bcbcbc; */
@@ -560,6 +619,7 @@ export default {
   outline: none;
   transition: 0.3s ease-in;
 }
+
 .price-card label {
   position: absolute;
   top: 0;
@@ -571,6 +631,7 @@ export default {
   border: 1px solid #bcbcbc;
   cursor: pointer;
 }
+
 .price-card input[type="radio"]:checked ~ label {
   border: 1px solid #f25430;
   background: #e4ec0d23;
@@ -578,6 +639,7 @@ export default {
   outline: none;
   border-width: 2px;
 }
+
 .price-card input[type="radio"] {
   width: 30px;
   height: auto;
@@ -586,47 +648,58 @@ export default {
   accent-color: #f25430;
   transform: scale(1.5);
 }
+
 .price-card .content {
   display: flex;
   flex-direction: column;
 }
+
 .price-card .content span {
   font-size: 0.7rem;
   font-family: Barlow-SemiBold;
 }
+
 .detail-info {
   padding-top: 2rem;
 }
+
 .info {
   margin-bottom: 10px;
 }
+
 .info h3 {
   letter-spacing: 1px;
 }
+
 .info small {
   font-size: 0.74rem;
   font-family: Barlow-SemiBold;
 }
+
 .input-field {
   display: flex;
   flex-direction: column;
 }
+
 .input-field label {
   font-size: 0.7rem;
   font-family: Barlow-SemiBold;
   padding-bottom: 5px;
   font-weight: 500;
 }
+
 .input-field input {
   padding: 0.75rem;
   border-radius: 3px;
   width: 100%;
   border: 1px solid #9ea0a9;
 }
+
 .input-field input:focus {
   border: 1px solid #f25430;
   outline: none;
 }
+
 .grid {
   display: flex;
   gap: 10px;
@@ -640,6 +713,7 @@ export default {
   text-align: center;
   margin-top: 1.8rem;
 }
+
 .btn {
   font-size: 13px;
   margin-top: 0.7rem;

@@ -219,7 +219,7 @@ export default {
   justify-content: center;
 }
 #namePizza {
-  color: #f25430;
+  color: #ffffff;
   margin-top: -5px;
   margin-left: 10px;
   font-family: "Barlow-SemiBold";

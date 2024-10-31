@@ -50,7 +50,7 @@ export default {
   bottom: 40px;
   right: 40px;
   background-color: #f25430;
-  color: #000000;
+  color: #ffffff;
   border-radius: 50px;
   z-index: 30;
   display: flex;
@@ -99,7 +99,7 @@ export default {
   top: 0;
   right: 0;
   background-color: #f25430;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-family: Barlow-SemiBold;
   font-size: 15px;
   width: 25px;
