@@ -13,7 +13,7 @@ export default {
     const Sobremesas = ref({
       tipos: [
         { nome: "Brownie com sorvete de creme", quantidade: 0, preco: 19.0 },
-        { nome: "Pudim", quantidade: 0, preco: 10.0 },
+        // { nome: "Pudim", quantidade: 0, preco: 10.0 },
       ],
     });
 
