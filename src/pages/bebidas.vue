@@ -27,9 +27,9 @@ export default {
         { nome: "Suco de Manga Jarra", quantidade: 0, preco: 12.0 },
         { nome: "Suco de Goiaba Jarra", quantidade: 0, preco: 12.0 },
         { nome: "Suco de Acerola Jarra", quantidade: 0, preco: 12.0 },
-        { nome: "Cerveja SKOL", quantidade: 0, preco: 10.0 },
+        /* { nome: "Cerveja SKOL", quantidade: 0, preco: 10.0 },
         { nome: "Cerveja Heineken", quantidade: 0, preco: 15.0 },
-        { nome: "Cerveja Budweiser", quantidade: 0, preco: 12.0 },
+        { nome: "Cerveja Budweiser", quantidade: 0, preco: 12.0 },*/
       ],
     });
 
