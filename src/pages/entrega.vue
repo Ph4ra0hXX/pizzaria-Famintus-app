@@ -54,38 +54,37 @@ export default {
       var dados = this.carrinho.burgers;
 
       if (dados.length > 0) {
-        //this.pedidoMontado += "*Burger*\n\n";
-
         const resultado = dados
           .map((categoria) => {
             return Object.keys(categoria)
               .map((chave) => {
-                const itensComQuantidade = categoria[chave].filter(
-                  (item) => item.quantidade > 0
-                );
+                const valor = categoria[chave];
 
-                if (itensComQuantidade.length > 0) {
-                  const categoriaFormatada = `${itensComQuantidade
-                    .map((item) => ` *${item.quantidade}x* ${item.nome}`)
-                    .join("\n")}`;
-                  return `${categoriaFormatada}\n`;
-                } else {
-                  return null;
+                // Verificar se a chave precisa de um nome especial
+                const label =
+                  chave === "preco"
+                    ? "Preço"
+                    : chave.charAt(0).toUpperCase() + chave.slice(1);
+
+                // Para arrays como "sabores", juntar os valores
+                if (Array.isArray(valor)) {
+                  return `${label}: ${valor.join(", ")}`;
                 }
+
+                // Para outros tipos de valor, retornar diretamente
+                return `${label}: ${valor}`;
               })
-              .filter((categoria) => categoria !== null)
               .join("\n");
           })
-          .filter((categoria) => categoria !== null)
-          .join(`\n${"-".repeat(30)}\n\n`);
+          .join(`\n\n${"-".repeat(30)}\n\n`);
 
-        this.pedidoMontado += resultado;
+        this.pedidoMontado = resultado; // Atualizar o pedido formatado
       }
 
       var numeroDoPedido = 1;
 
       if (dados.length > 0) {
-        this.pedidoMontado += `\n${"-".repeat(31)}\n`;
+        this.pedidoMontado += `\n\n${"-".repeat(31)}\n\n`;
       }
 
       var dados2 = this.carrinho.macarronadas;
