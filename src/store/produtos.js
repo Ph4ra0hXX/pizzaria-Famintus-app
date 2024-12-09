@@ -113,6 +113,13 @@ export const produtosStore = defineStore("produto", {
         },
         {
           id: 1,
+          nome: "CALZONES",
+          img: "food8.webp",
+          descricao: "Super recheado",
+          url: "/calzone",
+        },
+        {
+          id: 1,
           nome: "PIZZAS DOCES",
           img: "food7.webp",
           descricao: "Monte do seu jeito",
@@ -161,6 +168,13 @@ export const produtosStore2 = defineStore("produto2", {
           img: "pizza.webp",
           descricao: "Para começar bem",
           url: "/burger",
+        },
+        {
+          id: 1,
+          nome: "CALZONES",
+          img: "food8.webp",
+          descricao: "Super recheado",
+          url: "/calzone",
         },
         {
           id: 1,
