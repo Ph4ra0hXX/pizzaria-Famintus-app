@@ -15,20 +15,31 @@ const cardData2 = ref(store2.cardDataStore);
 function isWednesdayOrThursday() {
   const currentDate = new Date();
   const dayOfWeek = currentDate.getDay();
-
+  // 3 = quarta, 4 = quinta
   return dayOfWeek === 3 || dayOfWeek === 4;
+}
+
+function isClosedDay() {
+  const currentDate = new Date();
+  const dayOfWeek = currentDate.getDay();
+  // 1 = segunda, 2 = terça
+  return dayOfWeek === 1 || dayOfWeek === 2;
 }
 // || dayOfWeek === 4
 </script>
 
 <template>
-  <!--   <h2 id="fechados">No momento estamos fechados!</h2>-->
+  <h2 v-if="isClosedDay()" id="fechados">No momento estamos fechados!</h2>
   <Card
-    v-if="isWednesdayOrThursday()"
+    v-if="isWednesdayOrThursday() && !isClosedDay()"
     v-for="data2 in cardData2"
     :data="data2"
   />
-  <Card v-if="!isWednesdayOrThursday()" v-for="data in cardData" :data="data" />
+  <Card
+    v-if="!isWednesdayOrThursday() && !isClosedDay()"
+    v-for="data in cardData"
+    :data="data"
+  />
 </template>
 
 <style>
