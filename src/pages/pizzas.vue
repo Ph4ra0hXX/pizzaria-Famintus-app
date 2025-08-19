@@ -18,7 +18,6 @@
             <option value="GG">Gigante (3 Sabores)</option>
           </select>
         </div>
-        <br />
 
         <div>
           <div class="dotted-line">
@@ -78,6 +77,7 @@
       <br />
       <br />
       <br />
+      <br />
 
       <button @click="salvarPedido" id="butOpcoes" type="submit" value="Submit">
         adicionar
@@ -104,52 +104,32 @@ export default {
         {
           name: "Chocobrownie",
           ingredients:
-            "Massa Famintu's, mussarela, chocolate ao leite, pedaços de brownie.",
-          prices: {
-            P: 26.0,
-            G: 50.0,
-            GG: 60.0,
-          },
+            "Massa Famintu's, mussarela, chocolate ao leite e pedaços de brownie",
+          prices: { P: 35, G: 50, GG: 65 },
         },
         {
           name: "Banana",
           ingredients:
-            "Massa Famintu's, mussarela, discos de banana, canela, leite condensado.",
-          prices: {
-            P: 25.0,
-            G: 50.0,
-            GG: 60.0,
-          },
+            "Massa Famintu's, mussarela, discos de banana, canela em pó e leite condensado",
+          prices: { P: 35, G: 50, GG: 65 },
         },
         {
           name: "Chocolate Crocante",
           ingredients:
-            "Massa Famintu's, mussarela, chocolate ao leite com ovomaltine.",
-          prices: {
-            P: 32.0,
-            G: 64.0,
-            GG: 80.0,
-          },
+            "Massa Famintu's, mussarela, chocolate ao leite com ovomaltine",
+          prices: { P: 35, G: 50, GG: 65 },
         },
         {
           name: "Chocolate com Disquete",
           ingredients:
-            "Massa Famintu's, mussarela, chocolate ao leite, disquete.",
-          prices: {
-            P: 26.0,
-            G: 50.0,
-            GG: 60.0,
-          },
+            "Massa Famintu's, mussarela, chocolate ao leite e disquetes",
+          prices: { P: 35, G: 50, GG: 65 },
         },
         {
           name: "Chocolate com Morango",
           ingredients:
-            "Massa Famintu's, mussarela, chocolate ao leite, morango fatiado.",
-          prices: {
-            P: 32.0,
-            G: 64.0,
-            GG: 84.0,
-          },
+            "Massa Famintu's, mussarela, chocolate ao leite e morangos fatiados",
+          prices: { P: 35, G: 50, GG: 65 },
         },
       ],
       crustPrices: {
@@ -270,6 +250,7 @@ export default {
 #selectTamanho {
   width: 100%;
   height: 40px;
+  margin-bottom: 30px;
 }
 
 #observacao {

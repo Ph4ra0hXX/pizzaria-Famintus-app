@@ -30,16 +30,8 @@ function isClosedDay() {
 
 <template>
   <h2 v-if="isClosedDay()" id="fechados">No momento estamos fechados!</h2>
-  <Card
-    v-if="isWednesdayOrThursday() && !isClosedDay()"
-    v-for="data2 in cardData2"
-    :data="data2"
-  />
-  <Card
-    v-if="!isWednesdayOrThursday() && !isClosedDay()"
-    v-for="data in cardData"
-    :data="data"
-  />
+  <Card v-for="data2 in cardData2" :data="data2" />
+  <Card v-for="data in cardData" :data="data" />
 </template>
 
 <style>

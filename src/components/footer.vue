@@ -3,8 +3,7 @@
     <br />
     Quarta a Domingo, das 18h as 22:30h<br />
     <br />
-    R. Cel. Clóvis Alexandrino, 1772 - Brotolandia <br />
-    Próximo ao Posto Imperial<br />
+    Rua Joaquim Evaristo Gadelha - 1981 <br />
     <br />
     <a
       href="https://www.instagram.com/pizzariafamintus"

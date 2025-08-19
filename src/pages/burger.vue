@@ -104,205 +104,121 @@ export default {
       selectedFlavors: [],
       selectedCrust: "",
       flavors: [
-        {
-          name: "Calabresa",
-          ingredients:
-            "Massa Famintu's, molho especial, mussarela, calabresa, cebola, milho, orégano.",
-          prices: {
-            P: 27.0,
-            G: 42.0,
-            GG: 53.0,
-          },
-        },
-        {
-          name: "Portuguesa",
-          ingredients:
-            "Massa Famintu's, molho especial, mussarela, calabresa, ovo, presunto, cebola, tomate, pimentão, milho, orégano.",
-          prices: {
-            P: 27.0,
-            G: 42.0,
-            GG: 53.0,
-          },
-        },
-        {
-          name: "Quatro queijos",
-          ingredients:
-            "Massa Famintu's, molho especial, mussarela, catupiry, cheddar, queijo coalho em cubos, cebola, orégano.",
-          prices: {
-            P: 27.0,
-            G: 42.0,
-            GG: 53.0,
-          },
-        },
-        {
-          name: "Frango",
-          ingredients:
-            "Massa Famintu's, molho especial, mussarela, frango, cebola, tomate, milho, orégano.",
-          prices: {
-            P: 27.0,
-            G: 42.0,
-            GG: 53.0,
-          },
-        },
-        {
-          name: "Famintus",
-          ingredients:
-            "Massa Famintu's, molo especial, mussarela, frango, carne de sol, calabresa, bacon, catupiry, cebola, tomate, milho, orégano.",
-          prices: {
-            P: 30.0,
-            G: 46.0,
-            GG: 60.0,
-          },
-        },
-        {
-          name: "Mista",
-          ingredients:
-            "Massa Famintu's, molho especial, mussarela, presunto, cebola, tomate, milho, orégano.",
-          prices: {
-            P: 27.0,
-            G: 42.0,
-            GG: 53.0,
-          },
-        },
+        // Tradicionais
         {
           name: "Margherita",
           ingredients:
-            "Massa Famintu's, molho especial, mussarela, manjericão, tomate, orégano.",
-          prices: {
-            P: 27.0,
-            G: 42.0,
-            GG: 53.0,
-          },
+            "Massa Famintu's, molho especial, mussarela, manjericão e orégano",
+          prices: { P: 30, G: 47, GG: 60 },
         },
         {
           name: "Catufrango",
           ingredients:
-            "Massa Famintu's, molho especial, mussarela, frango, catupiry, cebola, milho, orégano.",
-          prices: {
-            P: 27.0,
-            G: 43.0,
-            GG: 55.0,
-          },
+            "Massa Famintu's, molho especial, mussarela, frango, catupiry, cebola e orégano",
+          prices: { P: 30, G: 47, GG: 60 },
         },
         {
           name: "Catusol",
           ingredients:
-            "Massa Famintu's, molho especial, mussarela, carne de sol, catupiry, cebola, orégano.",
-          prices: {
-            P: 29.0,
-            G: 46.0,
-            GG: 56.0,
-          },
+            "Massa Famintu's, molho especial, mussarela, carne de sol, catupiry, cebola e orégano",
+          prices: { P: 30, G: 47, GG: 60 },
         },
         {
           name: "Franbacon",
           ingredients:
-            "Massa Famintu's, molho especial, mussarela, frango, bacon, cebola, orégano.",
-          prices: {
-            P: 30.0,
-            G: 44.0,
-            GG: 60.0,
-          },
+            "Massa Famintu's, molho especial, mussarela, frango, bacon, cebola e orégano",
+          prices: { P: 30, G: 47, GG: 60 },
         },
         {
           name: "Carne de sol",
           ingredients:
-            "Massa Famintu's, molho especial, mussarela, carne de sol, cebola, milho, orégano.",
-          prices: {
-            P: 28.0,
-            G: 42.0,
-            GG: 55.0,
-          },
+            "Massa Famintu's, molho especial, mussarela, carne de sol, cebola, milho e orégano",
+          prices: { P: 30, G: 47, GG: 60 },
         },
         {
-          name: "Carne de sol com queijo coalho",
+          name: "Calabresa",
           ingredients:
-            "Massa Famintu's, molho especial, mussarela, carne de sol, queijo coalho em cubos, cream cheese, cebola roxa, tomate, orégano.",
-          prices: {
-            P: 35.0,
-            G: 62.0,
-            GG: 75.0,
-          },
+            "Massa Famintu's, molho especial, mussarela, calabresa, cebola, milho, orégano",
+          prices: { P: 30, G: 47, GG: 60 },
+        },
+        {
+          name: "Portuguesa",
+          ingredients:
+            "Massa Famintu's, molho especial, mussarela, calabresa, ovo, presunto, cebola, tomate, pimentão, milho e orégano",
+          prices: { P: 30, G: 47, GG: 60 },
+        },
+        {
+          name: "Quatro queijos",
+          ingredients:
+            "Massa Famintu's, molho especial, mussarela, catupiry, cheddar, queijo coalho em cubos, cebola e orégano",
+          prices: { P: 30, G: 47, GG: 60 },
+        },
+        {
+          name: "Famintus",
+          ingredients:
+            "Massa Famintu's, molho especial, mussarela, frango, carne de sol, calabresa, bacon, catupiry, cebola, tomate, milho, presunto, orégano",
+          prices: { P: 30, G: 47, GG: 60 },
+        },
+        {
+          name: "Mista",
+          ingredients:
+            "Massa Famintu's, molho especial, mussarela, presunto, cebola, tomate, milho e orégano",
+          prices: { P: 30, G: 47, GG: 60 },
+        },
+        // Especiais
+        {
+          name: "Carne sol com queijo coalho",
+          ingredients:
+            "Massa Famintu's, molho especial, mussarela, carne de sol, queijo coalho em cubos, cream cheese, cebola roxa, tomate e orégano",
+          prices: { P: 35, G: 63, GG: 75 },
         },
         {
           name: "Calabacon",
           ingredients:
-            "Massa Famintu's, molho especial, mussarela, calabresa, bacon, cream cheese, cebola roxa, orégano.",
-          prices: {
-            P: 33.0,
-            G: 55.0,
-            GG: 70.0,
-          },
+            "Massa Famintu's, molho especial, mussarela, calabresa, bacon, cream cheese, cebola roxa e orégano",
+          prices: { P: 35, G: 63, GG: 75 },
         },
         {
           name: "Frango Cremoso",
           ingredients:
-            "Massa Famintu's, molho especial, mussarela, frango cremoso, cream cheese, cebola, orégano.",
-          prices: {
-            P: 33.0,
-            G: 61.0,
-            GG: 75.0,
-          },
+            "Massa Famintu's, molho especial, mussarela, frango cremoso, cream cheese, cebola e orégano",
+          prices: { P: 35, G: 63, GG: 75 },
         },
         {
           name: "Toscana Especial",
           ingredients:
-            "Massa Famintu's, molho especial, mussarela, linguiça toscana, cream cheese, cebola caramelizada, orégano.",
-          prices: {
-            P: 33.0,
-            G: 61.0,
-            GG: 73.0,
-          },
+            "Massa Famintu's, molho especial, mussarela, linguiça toscana, cream cheese, cebola caramelizada e orégano",
+          prices: { P: 35, G: 63, GG: 75 },
         },
         {
           name: "Franbacon Especial",
           ingredients:
-            "Massa Famintu's, molho especial, mussarela, frango desfiado, bacon, cream cheese, cebola roxa, milho, orégano.",
-          prices: {
-            P: 33.0,
-            G: 61.0,
-            GG: 75.0,
-          },
+            "Massa Famintu's, molho especial, mussarela, frango desfiado, bacon, cream cheese, cebola roxa, milho e orégano",
+          prices: { P: 35, G: 63, GG: 75 },
         },
         {
           name: "Camarão Cremoso",
           ingredients:
-            "Massa Famintu's, molho especial, mussarela, camarão cremoso, cebola, tomate, milho, orégano.",
-          prices: {
-            P: 37.0,
-            G: 70.0,
-            GG: 85.0,
-          },
+            "Massa Famintu's, molho especial, mussarela, camarão cremoso, cebola, milho e orégano",
+          prices: { P: 35, G: 63, GG: 85 },
         },
         {
           name: "Hotdog",
           ingredients:
-            "Massa Famintu's, molho especial, mussarela, molho especial de salsicha, cebola, milho, batata palha, orégano.",
-          prices: {
-            P: 31.0,
-            G: 50.0,
-            GG: 65.0,
-          },
+            "Massa Famintu's, molho especial, mussarela, molho especial de salsicha, cebola, milho, batata palha e orégano",
+          prices: { P: 35, G: 63, GG: 75 },
         },
         {
           name: "Lombo",
           ingredients:
-            "Massa Famintu's, molho especial, mussarela, lombo, cebola, milho, orégano.",
-          prices: {
-            P: 30.0,
-            G: 60.0,
-            GG: 70.0,
-          },
+            "Massa Famintu's, molho especial, mussarela, lombo, cebola, milho e orégano",
+          prices: { P: 35, G: 63, GG: 75 },
         },
         {
-          name: "Italiana Cream",
+          name: "Italiana Cremosa",
           ingredients:
-            "Massa Famintu's, molho especial, mussarela, tomate, cebola roxa, cream cheese, milho, orégano.",
-          prices: {
-            P: 33.0,
-            G: 55.0,
-            GG: 70.0,
-          },
+            "Massa Famintu's, molho especial, mussarela, tomate, cebola roxa, cream cheese, milho, orégano",
+          prices: { P: 35, G: 63, GG: 75 },
         },
       ],
       crustPrices: {
