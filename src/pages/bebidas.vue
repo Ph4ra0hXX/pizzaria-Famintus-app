@@ -14,8 +14,8 @@ export default {
       tipos: [
         { nome: "Coca Lata", quantidade: 0, preco: 6 },
         { nome: "Guaraná Lata", quantidade: 0, preco: 6 },
-        { nome: "Coca Zero", quantidade: 0, preco: 6 },
-        { nome: "Coca 600", quantidade: 0, preco: 7 },
+        { nome: "Coca Zero Lata", quantidade: 0, preco: 6 },
+        { nome: "Coca 600ml", quantidade: 0, preco: 7 },
         { nome: "Heineken 600ml", quantidade: 0, preco: 12 },
         { nome: "Budweiser 600ml", quantidade: 0, preco: 12 },
         { nome: "Skol 600ml", quantidade: 0, preco: 12 },
