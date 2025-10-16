@@ -17,36 +17,36 @@ export default {
     const apesoEscolhido = ref(0);
 
     const taxaLocalidade = ref([
-    { nome: "Centro", preco: 3.0 },
-  { nome: "Bom Nome", preco: 4.0 },
-  { nome: "Boa Fé", preco: 5.0 },
-  { nome: "Estrada das Flores", preco: 5.0 },
-  { nome: "Brotolândia", preco: 3.0 },
-  { nome: "Populares", preco: 3.0 },
-  { nome: "Pitombeira", preco: 4.0 },
-  { nome: "Bom Fim", preco: 5.0 }, // Corrigido
-  { nome: "Cidade Alta", preco: 6.0 },
-  { nome: "São Raimundo", preco: 6.0 }, // Corrigido
-  { nome: "Arraial", preco: 7.0 }, // Corrigido
-  { nome: "Santa Luzia", preco: 4.0 },
-  { nome: "Monsenhor Otávio", preco: 4.0 },
-  { nome: "Pedra Branca", preco: 7.0 },
-  { nome: "Conj. Estrada das Flores", preco: 5.0 },
-  { nome: "Conviver", preco: 6.0 },
-  { nome: "Córrego de Areia", preco: 7.0 },
-  { nome: "Ilha", preco: 5.0 },
-  { nome: "José Simões", preco: 3.0 },
-  { nome: "Limoeirinho", preco: 3.0 },
-  { nome: "Luiz Alves", preco: 4.0 },
-  { nome: "Maria Dias", preco: 10.0 },
-  { nome: "Regional", preco: 25.0 },
-  { nome: "Sítio Socorro", preco: 5.0 },
-  { nome: "Várzea do Cobra", preco: 8.0 }
+      { nome: "Centro", preco: 3.0 },
+      { nome: "Bom Nome", preco: 4.0 },
+      { nome: "Boa Fé", preco: 5.0 },
+      { nome: "Estrada das Flores", preco: 5.0 },
+      { nome: "Brotolândia", preco: 3.0 },
+      { nome: "Populares", preco: 3.0 },
+      { nome: "Pitombeira", preco: 4.0 },
+      { nome: "Bom Fim", preco: 5.0 }, // Corrigido
+      { nome: "Cidade Alta", preco: 6.0 },
+      { nome: "São Raimundo", preco: 6.0 }, // Corrigido
+      { nome: "Arraial", preco: 7.0 }, // Corrigido
+      { nome: "Santa Luzia", preco: 4.0 },
+      { nome: "Monsenhor Otávio", preco: 4.0 },
+      { nome: "Pedra Branca", preco: 7.0 },
+      { nome: "Conj. Estrada das Flores", preco: 5.0 },
+      { nome: "Conviver", preco: 6.0 },
+      { nome: "Córrego de Areia", preco: 7.0 },
+      { nome: "Ilha", preco: 5.0 },
+      { nome: "José Simões", preco: 3.0 },
+      { nome: "Limoeirinho", preco: 3.0 },
+      { nome: "Luiz Alves", preco: 4.0 },
+      { nome: "Maria Dias", preco: 10.0 },
+      { nome: "Regional", preco: 25.0 },
+      { nome: "Sítio Socorro", preco: 5.0 },
+      { nome: "Várzea do Cobra", preco: 8.0 },
     ]);
 
     function copyToClipboard() {
       navigator.clipboard
-        .writeText("60378669370")
+        .writeText("60295974000171")
         .then(() => {
           toast.success("Pix copiado!", {
             timeout: 2000,
@@ -511,7 +511,13 @@ export default {
           class="input-field"
         >
           <button id="butCopiarPix" @click="copyToClipboard">Copiar PIX</button>
-          <p id="beneficiario">Beneficiário: Dayse Mara da Silva</p>
+          <div id="infopix">
+            <p id="beneficiario">
+              Beneficiário: Dayse Mara da Silva Cavalcante
+            </p>
+            <p id="banco">Banco: Nubank</p>
+            <p id="cnpj">CNPJ: 60.295.974/0001-71</p>
+          </div>
         </div>
         <div
           v-if="carrinho.dadosPessoais.formaDePagamento == 'Dinheiro'"
