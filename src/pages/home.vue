@@ -23,7 +23,7 @@ function isClosedDay() {
   const currentDate = new Date();
   const dayOfWeek = currentDate.getDay();
   // 1 = segunda, 2 = terça
-  return dayOfWeek === 1 || dayOfWeek === 2;
+  return false;
 }
 // || dayOfWeek === 4
 </script>
