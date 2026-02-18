@@ -46,7 +46,7 @@ export default {
 
     function copyToClipboard() {
       navigator.clipboard
-        .writeText("60295974000171")
+        .writeText("60378669370")
         .then(() => {
           toast.success("Pix copiado!", {
             timeout: 2000,
@@ -516,7 +516,7 @@ export default {
               Beneficiário: Dayse Mara da Silva Cavalcante
             </p>
             <p id="banco">Banco: Nubank</p>
-            <p id="cnpj">CNPJ: 60.295.974/0001-71</p>
+            <p id="cnpj">CPF: 60378669370</p>
           </div>
         </div>
         <div
