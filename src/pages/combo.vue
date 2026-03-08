@@ -14,13 +14,13 @@ export default {
       batataFrita: [
         {
           nome: "Batata Frita",
-          preco: 17,
+          preco: 18,
           quantidade: 0,
           descricao: "Batata palito.",
         },
         {
           nome: "Carne de Sol Acebolada",
-          preco: 43,
+          preco: 45,
           quantidade: 0,
           descricao:
             "Carne de sol Famintu's acompanhada de batata frita, arroz e farofa.",

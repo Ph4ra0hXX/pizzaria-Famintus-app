@@ -14,20 +14,20 @@ export default {
       batataFrita: [
         {
           nome: "CALZONE - CALABRESA COM MUSSARELA",
-          preco: 19.0,
+          preco: 25.0,
           quantidade: 0,
         },
-        { nome: "CALZONE - FRANGO COM CATUPIRY", preco: 19.0, quantidade: 0 },
+        { nome: "CALZONE - FRANGO COM CATUPIRY", preco: 25.0, quantidade: 0 },
         {
           nome: "CALZONE - CARNE DE SOL COM MUSSARELA",
-          preco: 19.0,
+          preco: 25.0,
           quantidade: 0,
         },
-        { nome: "CALZONE - PRESUNTO E MUSSARELA", preco: 19.0, quantidade: 0 },
-        { nome: "CALZONE - CARNE DE SOL ESPECIAL", preco: 23.0, quantidade: 0 },
-        { nome: "CALZONE - HOT DOG", preco: 23.0, quantidade: 0 },
-        { nome: "CALZONE - FRAMBACON ESPECIAL", preco: 23.0, quantidade: 0 },
-        { nome: "CALZONE - X-TREME", preco: 23.0, quantidade: 0 },
+        { nome: "CALZONE - PRESUNTO E MUSSARELA", preco: 25.0, quantidade: 0 },
+        { nome: "CALZONE - CARNE DE SOL ESPECIAL", preco: 28.0, quantidade: 0 },
+        { nome: "CALZONE - HOT DOG", preco: 28.0, quantidade: 0 },
+        { nome: "CALZONE - FRAMBACON ESPECIAL", preco: 28.0, quantidade: 0 },
+        { nome: "CALZONE - X-TREME", preco: 28.0, quantidade: 0 },
       ],
     });
 
