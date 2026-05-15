@@ -46,7 +46,7 @@ export default {
 
     function copyToClipboard() {
       navigator.clipboard
-        .writeText("60295974000171")
+        .writeText("7420496331")
         .then(() => {
           toast.success("Pix copiado!", {
             timeout: 2000,
@@ -513,9 +513,10 @@ export default {
           <button id="butCopiarPix" @click="copyToClipboard">Copiar PIX</button>
           <div id="infopix">
             <p id="beneficiario">
-              Beneficiário: Dayse Mara da Silva Cavalcante
+              Beneficiário: Ozinete Lima Maia
             </p>
-            <p id="cnpj">CNPJ: 60295974000171</p>
+            <p id="banco">Banco: PicPay</p>
+            <p id="chave">Chave PIX: 7420496331</p>
           </div>
         </div>
         <div
