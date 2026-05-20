@@ -13,9 +13,8 @@
             v-model="selectedSize"
             @change="resetFlavors"
           >
-            <option value="P">Pequena (2 Sabores)</option>
-            <option value="G">Grande (2 Sabores)</option>
-            <option value="GG">Gigante (3 Sabores)</option>
+            <option value="G">G</option>
+            <option value="GG">GG</option>
           </select>
         </div>
 
@@ -97,7 +96,7 @@ import { carrinhoStore } from "../store/produtos";
 export default {
   data() {
     return {
-      selectedSize: "P",
+      selectedSize: "G",
       selectedFlavors: [],
       selectedCrust: "",
       flavors: [
@@ -141,7 +140,7 @@ export default {
   },
   computed: {
     isFlavorDisabled() {
-      const maxFlavors = this.selectedSize === "GG" ? 3 : 2;
+      const maxFlavors = 2;
       return this.selectedFlavors.length >= maxFlavors;
     },
   },
