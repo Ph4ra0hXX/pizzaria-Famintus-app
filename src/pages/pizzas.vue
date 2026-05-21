@@ -13,6 +13,7 @@
             v-model="selectedSize"
             @change="resetFlavors"
           >
+            <option value="P">P</option>
             <option value="G">G</option>
             <option value="GG">GG</option>
           </select>
