@@ -12,22 +12,30 @@ export default {
 
     const Bebidas = ref({
       tipos: [
-        { nome: "Coca Lata", quantidade: 0, preco: 6 },
-        { nome: "Guaraná Lata", quantidade: 0, preco: 6 },
-        { nome: "Coca Zero Lata", quantidade: 0, preco: 6 },
+        { nome: "Coca lata", quantidade: 0, preco: 6 },
+        { nome: "Coca lata zero", quantidade: 0, preco: 6 },
+        { nome: "Guaraná lata", quantidade: 0, preco: 6 },
         { nome: "Coca 600ml", quantidade: 0, preco: 8 },
         { nome: "Heineken 600ml", quantidade: 0, preco: 15 },
         { nome: "Budweiser 600ml", quantidade: 0, preco: 12 },
         { nome: "Skol 600ml", quantidade: 0, preco: 12 },
-        { nome: "Coca Guaraná 1L", quantidade: 0, preco: 11 },
-        { nome: "Cajuína 1L", quantidade: 0, preco: 11 },
+        { nome: "Coca 1l", quantidade: 0, preco: 11 },
+        { nome: "Guaraná 1l", quantidade: 0, preco: 11 },
+        { nome: "Cajuína 1l", quantidade: 0, preco: 11 },
         { nome: "Suco de Goiaba Copo", quantidade: 0, preco: 7 },
-        { nome: "Suco de Manga & Acerola Copo", quantidade: 0, preco: 7 },
-        { nome: "Suco de Maracujá Copo", quantidade: 0, preco: 8 },
         { nome: "Suco de Goiaba Jarra", quantidade: 0, preco: 13 },
+        { nome: "Suco de Manga Copo", quantidade: 0, preco: 7 },
         { nome: "Suco de Manga Jarra", quantidade: 0, preco: 13 },
+        { nome: "Suco de Abacaxi Copo", quantidade: 0, preco: 7 },
+        { nome: "Suco de Abacaxi Jarra", quantidade: 0, preco: 13 },
+        { nome: "Suco de Acerola Copo", quantidade: 0, preco: 7 },
         { nome: "Suco de Acerola Jarra", quantidade: 0, preco: 13 },
+        { nome: "Suco de Maracujá Copo", quantidade: 0, preco: 8 },
         { nome: "Suco de Maracujá Jarra", quantidade: 0, preco: 15 },
+        { nome: "Suco de Cajá Copo", quantidade: 0, preco: 7 },
+        { nome: "Suco de Cajá Jarra", quantidade: 0, preco: 13 },
+        { nome: "Suco de Umbu Copo", quantidade: 0, preco: 7 },
+        { nome: "Suco de Umbu Jarra", quantidade: 0, preco: 13 },
       ],
     });
 
@@ -65,7 +73,32 @@ export default {
         <span id="textDividers">Bebidas</span>
         <hr />
       </div>
-      <div v-for="(item, index) in Bebidas.tipos" :key="item">
+      <div v-for="(item, index) in Bebidas.tipos.slice(0, 10)" :key="item.nome">
+        <button class="botao1" @click="item.quantidade++">+</button>
+
+        <button
+          v-if="item.quantidade > 0"
+          class="botao2"
+          @click="item.quantidade--"
+        >
+          -
+        </button>
+
+        <label style="pointer-events: none" id="nomeItem" for="adicional"
+          ><span id="quantidadeDiv">{{ item.quantidade }}x</span>
+          {{ item.nome }}</label
+        >
+        <label id="preco">R$: {{ item.preco.toFixed(2) }}</label>
+        <p id="itens"></p>
+        <br />
+      </div>
+
+      <div class="dotted-line">
+        <hr />
+        <span id="textDividers">Sucos</span>
+        <hr />
+      </div>
+      <div v-for="(item, index) in Bebidas.tipos.slice(10)" :key="item.nome">
         <button class="botao1" @click="item.quantidade++">+</button>
 
         <button

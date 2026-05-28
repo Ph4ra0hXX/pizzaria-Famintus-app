@@ -105,31 +105,31 @@ export default {
           name: "Chocobrownie",
           ingredients:
             "Massa Famintu's, mussarela, chocolate ao leite e pedaços de brownie",
-          prices: { P: 35, G: 50, GG: 65 },
+          prices: { P: 40, G: 62, GG: 75 },
         },
         {
-          name: "Banana",
+          name: "Banana Nevada",
           ingredients:
             "Massa Famintu's, mussarela, discos de banana, canela em pó e leite condensado",
-          prices: { P: 35, G: 50, GG: 65 },
+          prices: { P: 40, G: 62, GG: 75 },
         },
         {
           name: "Chocolate Crocante",
           ingredients:
             "Massa Famintu's, mussarela, chocolate ao leite com ovomaltine",
-          prices: { P: 35, G: 50, GG: 65 },
+          prices: { P: 40, G: 62, GG: 75 },
         },
         {
           name: "Chocolate com Disquete",
           ingredients:
             "Massa Famintu's, mussarela, chocolate ao leite e disquetes",
-          prices: { P: 35, G: 50, GG: 65 },
+          prices: { P: 40, G: 62, GG: 75 },
         },
         {
           name: "Chocolate com Morango",
           ingredients:
             "Massa Famintu's, mussarela, chocolate ao leite e morangos fatiados",
-          prices: { P: 35, G: 50, GG: 65 },
+          prices: { P: 40, G: 62, GG: 75 },
         },
       ],
       crustPrices: {

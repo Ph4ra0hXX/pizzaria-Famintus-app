@@ -101,7 +101,7 @@ export const produtosStore = defineStore("produto", {
           id: 8,
           nome: "ENTRADAS",
           img: "food6.webp",
-          descricao: "Para começar bem",
+          descricao: "Batatas e Porções",
           url: "/combo",
         },
         {
@@ -132,7 +132,7 @@ export const produtosStore = defineStore("produto", {
           descricao: "No ponto certo",
           url: "/batata",
         },*/
-     /*   {
+        /*   {
           id: 7,
           nome: "SOBREMESAS",
           img: "food5.webp",
@@ -159,7 +159,7 @@ export const produtosStore2 = defineStore("produto2", {
           id: 8,
           nome: "ENTRADAS",
           img: "food6.webp",
-          descricao: "Combo Completo",
+          descricao: "Batatas e Porções",
           url: "/combo",
         },
         {
@@ -197,7 +197,7 @@ export const produtosStore2 = defineStore("produto2", {
           descricao: "No ponto certo",
           url: "/batata",
         },*/
-     /*   {
+        /*   {
           id: 7,
           nome: "SOBREMESAS",
           img: "food5.webp",

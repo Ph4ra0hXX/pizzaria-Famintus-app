@@ -13,17 +13,19 @@ export default {
     const Batata = ref({
       batataFrita: [
         {
-          nome: "Batata Frita",
-          preco: 18,
+          nome: "Batata tradicional",
+          preco: 18.0,
           quantidade: 0,
-          descricao: "Batata palito.",
         },
         {
-          nome: "Carne de Sol Acebolada",
-          preco: 45,
+          nome: "Batata Famintus (Batata, calabresa, bacon e cheddar)",
+          preco: 26.0,
           quantidade: 0,
-          descricao:
-            "Carne de sol Famintu's acompanhada de batata frita, arroz e farofa.",
+        },
+        {
+          nome: "Carne de sol acebolada (com batata frita, arroz e farofa)",
+          preco: 50.0,
+          quantidade: 0,
         },
       ],
     });
@@ -59,7 +61,7 @@ export default {
     <div id="listar">
       <div class="dotted-line">
         <hr />
-        <span id="textDividers">Combo</span>
+        <span id="textDividers">Entradas</span>
         <hr />
       </div>
       <div v-for="(item, index) in Batata.batataFrita" :key="item">
@@ -78,7 +80,7 @@ export default {
           {{ item.nome }}</label
         >
         <label id="preco">R$: {{ item.preco.toFixed(2) }}</label>
-        <p id="itens">{{ item.descricao }}</p>
+        <p id="itens"></p>
         <br />
       </div>
       <br />
