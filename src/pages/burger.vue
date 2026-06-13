@@ -65,6 +65,10 @@
         <div>
           <select id="selectTamanho" v-model="selectedCrust">
             <option value="">Sem borda</option>
+            <option value="cheddar">
+              Cheddar (R$
+              {{ crustPrices.cheddar[selectedSize].toFixed(2) }})
+            </option>
             <option value="chocolate">
               Chocolate (R$
               {{ crustPrices.chocolate[selectedSize].toFixed(2) }})
@@ -245,8 +249,9 @@ export default {
         },
       ],
       crustPrices: {
-        chocolate: { P: 9.0, G: 11.0, GG: 15.0 },
-        "cream-cheese": { P: 9.0, G: 15.0, GG: 20.0 },
+        cheddar: { P: 5.0, G: 10.0, GG: 15.0 },
+        chocolate: { P: 10.0, G: 15.0, GG: 20.0 },
+        "cream-cheese": { P: 10.0, G: 15.0, GG: 20.0 },
         catupiry: { P: 0, G: 0, GG: 0 },
       },
     };
