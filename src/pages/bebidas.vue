@@ -16,10 +16,12 @@ export default {
         { nome: "Coca lata zero", quantidade: 0, preco: 6 },
         { nome: "Guaraná lata", quantidade: 0, preco: 6 },
         { nome: "Coca 600ml", quantidade: 0, preco: 8 },
+        { nome: "Coca 600ml zero", quantidade: 0, preco: 8 },
         { nome: "Heineken 600ml", quantidade: 0, preco: 15 },
-        { nome: "Budweiser 600ml", quantidade: 0, preco: 12 },
-        { nome: "Skol 600ml", quantidade: 0, preco: 12 },
+        { nome: "Budweiser 330ml", quantidade: 0, preco: 13 },
+        { nome: "Skol 600ml", quantidade: 0, preco: 14 },
         { nome: "Coca 1l", quantidade: 0, preco: 11 },
+        { nome: "Coca 1l zero", quantidade: 0, preco: 11 },
         { nome: "Guaraná 1l", quantidade: 0, preco: 11 },
         { nome: "Cajuína 1l", quantidade: 0, preco: 11 },
         { nome: "Suco de Goiaba Copo", quantidade: 0, preco: 7 },
@@ -73,7 +75,7 @@ export default {
         <span id="textDividers">Bebidas</span>
         <hr />
       </div>
-      <div v-for="(item, index) in Bebidas.tipos.slice(0, 10)" :key="item.nome">
+      <div v-for="(item, index) in Bebidas.tipos.slice(0, 12)" :key="item.nome">
         <button class="botao1" @click="item.quantidade++">+</button>
 
         <button
@@ -98,7 +100,7 @@ export default {
         <span id="textDividers">Sucos</span>
         <hr />
       </div>
-      <div v-for="(item, index) in Bebidas.tipos.slice(10)" :key="item.nome">
+      <div v-for="(item, index) in Bebidas.tipos.slice(12)" :key="item.nome">
         <button class="botao1" @click="item.quantidade++">+</button>
 
         <button
