@@ -1,5 +1,5 @@
 <script>
-import { ref, watch, onUpdated } from "vue";
+import { ref } from "vue";
 import { carrinhoStore } from "../store/produtos";
 import { useToast } from "vue-toastification";
 import router from "../router/index";
@@ -13,21 +13,65 @@ export default {
     const Batata = ref({
       batataFrita: [
         {
-          nome: "CALZONE - CALABRESA COM MUSSARELA",
-          preco: 25.0,
+          nome: "FRANGO (Frango e mussarela)",
+          preco: 28.0,
           quantidade: 0,
         },
-        { nome: "CALZONE - FRANGO COM CATUPIRY", preco: 25.0, quantidade: 0 },
         {
-          nome: "CALZONE - CARNE DE SOL COM MUSSARELA",
-          preco: 25.0,
+          nome: "MISTO (Presunto e mussarela)",
+          preco: 28.0,
           quantidade: 0,
         },
-        { nome: "CALZONE - PRESUNTO E MUSSARELA", preco: 25.0, quantidade: 0 },
-        { nome: "CALZONE - CARNE DE SOL ESPECIAL", preco: 28.0, quantidade: 0 },
-        { nome: "CALZONE - HOT DOG", preco: 28.0, quantidade: 0 },
-        { nome: "CALZONE - FRAMBACON ESPECIAL", preco: 28.0, quantidade: 0 },
-        { nome: "CALZONE - X-TREME", preco: 28.0, quantidade: 0 },
+        {
+          nome: "CALABRESA (Calabresa e mussarela)",
+          preco: 28.0,
+          quantidade: 0,
+        },
+        {
+          nome: "CARNE DE SOL (Carne de sol e mussarela)",
+          preco: 28.0,
+          quantidade: 0,
+        },
+        {
+          nome: "CARNE DE SOL ESPECIAL (Queijo coalho em cubo e cream cheese)",
+          preco: 34.0,
+          quantidade: 0,
+        },
+        {
+          nome: "FRANBACON ESPECIAL (Frango, bacon e cream cheese)",
+          preco: 34.0,
+          quantidade: 0,
+        },
+        {
+          nome: "XTREME (Carne de sol, frango, presunto, calabresa, bacon e cream cheese)",
+          preco: 38.0,
+          quantidade: 0,
+        },
+        {
+          nome: "FILE (Mussarela, file e creme cheddar original)",
+          preco: 38.0,
+          quantidade: 0,
+        },
+        {
+          nome: "CROCANTE (Chocolate ao leite e Ovomaltine)",
+          preco: 34.0,
+          quantidade: 0,
+        },
+        {
+          nome: "BROWNIE (Chocolate ao leite com pedacos de brownie)",
+          preco: 34.0,
+          quantidade: 0,
+        },
+        {
+          nome: "BANANA (Banana em fatias, mussarela, leite condensado e canela em po)",
+          preco: 34.0,
+          quantidade: 0,
+        },
+        {
+          nome: "MORANGO (Chocolate ao leite com morangos fatiados)",
+          preco: 34.0,
+          quantidade: 0,
+        },
       ],
     });
 
