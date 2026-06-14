@@ -86,7 +86,13 @@
       <br />
       <br />
 
-      <button @click="salvarPedido" id="butOpcoes" type="submit" value="Submit">
+      <button
+        @click="salvarPedido"
+        id="butOpcoes"
+        type="submit"
+        value="Submit"
+        :disabled="!hasSelectedFlavor"
+      >
         adicionar
       </button>
 
@@ -261,9 +267,25 @@ export default {
       const maxFlavors = 2;
       return this.selectedFlavors.length >= maxFlavors;
     },
+    hasSelectedFlavor() {
+      return this.selectedFlavors.length > 0;
+    },
   },
   methods: {
     salvarPedido() {
+      if (!this.hasSelectedFlavor) {
+        const toast = useToast();
+
+        toast.warning("Escolha pelo menos uma pizza.", {
+          timeout: 2000,
+          position: "top-right",
+          icon: false,
+          showCloseButtonOnHover: true,
+        });
+
+        return;
+      }
+
       const pedido = {
         tamanho: this.selectedSize,
         sabores: this.selectedFlavors,
