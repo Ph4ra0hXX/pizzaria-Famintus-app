@@ -76,6 +76,10 @@ export default {
         .catch((error) => console.error("Erro ao copiar: " + error));
     }
 
+    function campoPreenchido(valor) {
+      return String(valor ?? "").trim() != "";
+    }
+
     function finalizarPedido() {
       this.pedidoMontado = "";
 
@@ -281,7 +285,10 @@ export default {
       this.pedidoMontado += `\n*Observações:*\n - ${this.carrinho.observacao}\n`;
 
       if (this.carrinho.dadosPessoais.formaDeEntrega == "Vou buscar") {
-        if (this.carrinho.dadosPessoais.nome != "") {
+        if (
+          campoPreenchido(this.carrinho.dadosPessoais.nome) &&
+          campoPreenchido(this.carrinho.dadosPessoais.formaDePagamento)
+        ) {
           this.pedidoMontado += `\n*Nome:*\n - ${this.carrinho.dadosPessoais.nome}\n`;
           this.pedidoMontado += `\n*Forma de entrega:*\n - ${this.carrinho.dadosPessoais.formaDeEntrega}\n`;
           this.pedidoMontado += `\n*Forma de Pagamento:*\n - ${this.carrinho.dadosPessoais.formaDePagamento}\n`;
@@ -308,11 +315,12 @@ export default {
 
       if (this.carrinho.dadosPessoais.formaDeEntrega == "Quero entrega") {
         if (
-          this.carrinho.dadosPessoais.nome != "" &&
-          this.carrinho.dadosPessoais.rua != "" &&
-          this.carrinho.dadosPessoais.bairro.nome != "" &&
-          this.carrinho.dadosPessoais.numero != "" &&
-          this.carrinho.dadosPessoais.formaDePagamento != ""
+          campoPreenchido(this.carrinho.dadosPessoais.nome) &&
+          campoPreenchido(this.carrinho.dadosPessoais.rua) &&
+          campoPreenchido(this.carrinho.dadosPessoais.bairro.nome) &&
+          campoPreenchido(this.carrinho.dadosPessoais.numero) &&
+          campoPreenchido(this.carrinho.dadosPessoais.referencia) &&
+          campoPreenchido(this.carrinho.dadosPessoais.formaDePagamento)
         ) {
           this.pedidoMontado += `\n*Nome:*\n - ${this.carrinho.dadosPessoais.nome}\n`;
           this.pedidoMontado += `\n*Rua:*\n - ${this.carrinho.dadosPessoais.rua}\n`;
@@ -401,54 +409,66 @@ export default {
       <div class="detail-info">
         <div v-if="carrinho.dadosPessoais.formaDeEntrega == 'Vou buscar'">
           <div class="info">
-            <h3>Seu Nome:</h3>
+            <h3>Seu Nome: <span class="required-badge">obrigatório</span></h3>
           </div>
           <div class="input-field">
             <input
+              class="required-input"
               v-model="carrinho.dadosPessoais.nome"
               type="text"
               id="card_number"
-              placeholder=""
+              placeholder="Digite seu nome"
+              required
             />
+            <small>Preencha este campo para finalizar o pedido.</small>
           </div>
           <br />
         </div>
 
         <div v-if="carrinho.dadosPessoais.formaDeEntrega == 'Quero entrega'">
           <div class="info">
-            <h3>Seu Nome:</h3>
+            <h3>Seu Nome: <span class="required-badge">obrigatório</span></h3>
           </div>
           <div class="input-field">
             <input
+              class="required-input"
               v-model="carrinho.dadosPessoais.nome"
               type="text"
               id="card_number"
-              placeholder=""
+              placeholder="Digite seu nome"
+              required
             />
+            <small>Preencha este campo para finalizar o pedido.</small>
           </div>
           <br />
           <div class="info">
-            <h3>Rua:</h3>
+            <h3>Rua: <span class="required-badge">obrigatório</span></h3>
           </div>
           <div class="input-field">
             <input
+              class="required-input"
               v-model="carrinho.dadosPessoais.rua"
               type="text"
               id="card_number"
-              placeholder=""
+              placeholder="Ex: Rua São João"
+              required
             />
+            <small>Preencha este campo para finalizar o pedido.</small>
           </div>
           <br />
           <div class="info">
-            <h3>Bairro:</h3>
+            <h3>Bairro: <span class="required-badge">obrigatório</span></h3>
           </div>
 
           <div class="input-field">
             <select
+              class="required-input"
               id="card_bairro"
               v-model="carrinho.dadosPessoais.bairro"
               name="select"
+              required
             >
+              <option disabled value="">Selecione o bairro</option>
               <option
                 v-for="(local, index) in taxaLocalidade"
                 :key="index"
@@ -457,36 +477,43 @@ export default {
                 {{ local.nome }} - {{ local.preco }}
               </option>
             </select>
+            <small>Escolha o bairro para calcular a entrega.</small>
           </div>
 
           <br />
           <div class="info">
-            <h3>Número da Casa:</h3>
+            <h3>Número da Casa: <span class="required-badge">obrigatório</span></h3>
           </div>
           <div class="input-field">
             <input
+              class="required-input"
               v-model="carrinho.dadosPessoais.numero"
               type="number"
               id="card_number"
-              placeholder=""
+              placeholder="Ex: 123"
+              required
             />
+            <small>Preencha este campo para finalizar o pedido.</small>
           </div>
           <br />
           <div class="info">
-            <h3>Ponto de Referência:</h3>
+            <h3>Ponto de Referência: <span class="required-badge">obrigatório</span></h3>
           </div>
           <div class="input-field">
             <input
+              class="required-input"
               v-model="carrinho.dadosPessoais.referencia"
               type="text"
               id="card_number"
-              placeholder=""
+              placeholder="Ex: perto da praça"
+              required
             />
+            <small>Preencha este campo para finalizar o pedido.</small>
           </div>
           <br />
         </div>
         <div class="info">
-          <h3>Formas de Pagamento:</h3>
+          <h3>Formas de Pagamento: <span class="required-badge">obrigatório</span></h3>
         </div>
         <div class="payment-container">
           <div class="price-card">
@@ -496,6 +523,7 @@ export default {
               name="price"
               type="radio"
               id="pix"
+              required
             />
             <div class="content">PIX</div>
             <label for="pix"></label>
@@ -564,6 +592,21 @@ export default {
 <style scoped>
 #card_bairro {
   height: 45px;
+}
+
+.required-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 20px;
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #fff2ee;
+  color: #f25430;
+  font-size: 0.68rem;
+  font-family: Barlow-SemiBold;
+  letter-spacing: 0;
+  vertical-align: middle;
 }
 
 #beneficiario {
@@ -701,7 +744,8 @@ export default {
 }
 
 .info h3 {
-  letter-spacing: 1px;
+  letter-spacing: 0;
+  color: #201726;
 }
 
 .info small {
@@ -712,6 +756,7 @@ export default {
 .input-field {
   display: flex;
   flex-direction: column;
+  gap: 6px;
 }
 
 .input-field label {
@@ -722,15 +767,49 @@ export default {
 }
 
 .input-field input {
-  padding: 0.75rem;
-  border-radius: 3px;
+  padding: 0.9rem 0.85rem;
+  border-radius: 6px;
   width: 100%;
-  border: 1px solid #9ea0a9;
+  border: 1px solid #c8cad2;
+  background: #fff;
+  color: #201726;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
-.input-field input:focus {
-  border: 1px solid #f25430;
+.input-field select {
+  padding: 0.75rem 0.85rem;
+  border-radius: 6px;
+  width: 100%;
+  border: 1px solid #c8cad2;
+  background: #fff;
+  color: #201726;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.input-field input::placeholder {
+  color: #a5a7af;
+}
+
+.input-field small {
+  color: #f25430;
+  font-size: 0.76rem;
+  line-height: 1.2;
+}
+
+.input-field input:focus,
+.input-field select:focus {
+  border-color: #f25430;
+  box-shadow: 0 0 0 3px rgba(242, 84, 48, 0.15);
   outline: none;
+}
+
+.required-input:invalid {
+  border-color: #f25430;
+  background: #fffafa;
+}
+
+.required-input:valid {
+  border-color: #59b66d;
 }
 
 .grid {
