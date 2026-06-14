@@ -80,6 +80,10 @@ export default {
       return String(valor ?? "").trim() != "";
     }
 
+    function manterSomenteNumeros(event) {
+      carrinho.dadosPessoais.numero = event.target.value.replace(/\D/g, "");
+    }
+
     function finalizarPedido() {
       this.pedidoMontado = "";
 
@@ -360,6 +364,7 @@ export default {
       apesoEscolhido,
       copyToClipboard,
       taxaLocalidade,
+      manterSomenteNumeros,
     };
   },
 };
@@ -488,7 +493,10 @@ export default {
             <input
               class="required-input"
               v-model="carrinho.dadosPessoais.numero"
-              type="number"
+              type="text"
+              inputmode="numeric"
+              pattern="[0-9]*"
+              @input="manterSomenteNumeros"
               id="card_number"
               placeholder="Ex: 123"
               required
@@ -597,6 +605,7 @@ export default {
 .required-badge {
   display: inline-flex;
   align-items: center;
+  flex: 0 0 auto;
   min-height: 20px;
   margin-left: 6px;
   padding: 2px 8px;
@@ -744,8 +753,13 @@ export default {
 }
 
 .info h3 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 6px;
   letter-spacing: 0;
   color: #201726;
+  line-height: 1.25;
 }
 
 .info small {
@@ -770,6 +784,7 @@ export default {
   padding: 0.9rem 0.85rem;
   border-radius: 6px;
   width: 100%;
+  min-width: 0;
   border: 1px solid #c8cad2;
   background: #fff;
   color: #201726;
@@ -780,6 +795,7 @@ export default {
   padding: 0.75rem 0.85rem;
   border-radius: 6px;
   width: 100%;
+  min-width: 0;
   border: 1px solid #c8cad2;
   background: #fff;
   color: #201726;
