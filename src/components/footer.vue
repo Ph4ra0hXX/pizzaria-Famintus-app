@@ -1,7 +1,7 @@
 <template>
   <div class="rodape">
     <br />
-    Quarta a Domingo, das 18h as 22:30h<br />
+    Terça a Domingo, das 18h as 22:30h<br />
     <br />
     Rua Joaquim Evaristo Gadelha - 1981 <br />
     <br />

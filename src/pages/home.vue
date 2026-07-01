@@ -22,8 +22,8 @@ function isWednesdayOrThursday() {
 function isClosedDay() {
   const currentDate = new Date();
   const dayOfWeek = currentDate.getDay();
-  // 1 = segunda, 2 = terça
-  return false;
+  // 1 = segunda
+  return dayOfWeek === 1;
 }
 // || dayOfWeek === 4
 </script>
