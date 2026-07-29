@@ -19,7 +19,7 @@ export default {
         },
         {
           nome: "Batata Famintus (Batata, calabresa, bacon e cheddar)",
-          preco: 26.0,
+          preco: 30.0,
           quantidade: 0,
         },
         {

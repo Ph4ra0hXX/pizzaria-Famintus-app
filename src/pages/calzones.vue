@@ -63,11 +63,6 @@ export default {
           quantidade: 0,
         },
         {
-          nome: "BANANA (Banana em fatias, mussarela, leite condensado e canela em po)",
-          preco: 34.0,
-          quantidade: 0,
-        },
-        {
           nome: "MORANGO (Chocolate ao leite com morangos fatiados)",
           preco: 34.0,
           quantidade: 0,

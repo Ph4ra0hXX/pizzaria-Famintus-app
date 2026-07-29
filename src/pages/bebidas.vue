@@ -12,34 +12,85 @@ export default {
 
     const Bebidas = ref({
       tipos: [
-        { nome: "Coca lata", quantidade: 0, preco: 6 },
-        { nome: "Coca lata zero", quantidade: 0, preco: 6 },
-        { nome: "Guaraná lata", quantidade: 0, preco: 6 },
-        { nome: "Coca 600ml", quantidade: 0, preco: 8 },
-        { nome: "Coca 600ml zero", quantidade: 0, preco: 8 },
-        { nome: "Heineken 600ml", quantidade: 0, preco: 15 },
-        { nome: "Budweiser 330ml", quantidade: 0, preco: 13 },
-        { nome: "Skol 600ml", quantidade: 0, preco: 14 },
-        { nome: "Coca 1l", quantidade: 0, preco: 11 },
-        { nome: "Coca 1l zero", quantidade: 0, preco: 11 },
-        { nome: "Guaraná 1l", quantidade: 0, preco: 11 },
-        { nome: "Cajuína 1l", quantidade: 0, preco: 11 },
-        { nome: "Suco de Goiaba Copo", quantidade: 0, preco: 7 },
-        { nome: "Suco de Goiaba Jarra", quantidade: 0, preco: 13 },
-        { nome: "Suco de Manga Copo", quantidade: 0, preco: 7 },
-        { nome: "Suco de Manga Jarra", quantidade: 0, preco: 13 },
-        { nome: "Suco de Abacaxi Copo", quantidade: 0, preco: 7 },
-        { nome: "Suco de Abacaxi Jarra", quantidade: 0, preco: 13 },
-        { nome: "Suco de Acerola Copo", quantidade: 0, preco: 7 },
-        { nome: "Suco de Acerola Jarra", quantidade: 0, preco: 13 },
-        { nome: "Suco de Maracujá Copo", quantidade: 0, preco: 8 },
-        { nome: "Suco de Maracujá Jarra", quantidade: 0, preco: 15 },
-        { nome: "Suco de Cajá Copo", quantidade: 0, preco: 7 },
-        { nome: "Suco de Cajá Jarra", quantidade: 0, preco: 13 },
-        { nome: "Suco de Umbu Copo", quantidade: 0, preco: 7 },
-        { nome: "Suco de Umbu Jarra", quantidade: 0, preco: 13 },
+        { categoria: "Bebidas", nome: "Coca lata", quantidade: 0, preco: 7 },
+        {
+          categoria: "Bebidas",
+          nome: "Coca lata zero",
+          quantidade: 0,
+          preco: 7,
+        },
+        { categoria: "Bebidas", nome: "Coca 600ml", quantidade: 0, preco: 9 },
+        {
+          categoria: "Bebidas",
+          nome: "Coca 600ml zero",
+          quantidade: 0,
+          preco: 9,
+        },
+        { categoria: "Bebidas", nome: "Skol 600ml", quantidade: 0, preco: 15 },
+        {
+          categoria: "Bebidas",
+          nome: "Heineken 330ml",
+          quantidade: 0,
+          preco: 15,
+        },
+        {
+          categoria: "Bebidas",
+          nome: "Budweiser 330ml",
+          quantidade: 0,
+          preco: 14,
+        },
+        { categoria: "Bebidas", nome: "Coca 1l", quantidade: 0, preco: 12 },
+        {
+          categoria: "Bebidas",
+          nome: "Coca 1l zero",
+          quantidade: 0,
+          preco: 12,
+        },
+        { categoria: "Bebidas", nome: "Cajuína 1l", quantidade: 0, preco: 12 },
+        { categoria: "Sucos", nome: "Suco de Goiaba Copo", quantidade: 0, preco: 7 },
+        { categoria: "Sucos", nome: "Suco de Goiaba Jarra", quantidade: 0, preco: 13 },
+        { categoria: "Sucos", nome: "Suco de Manga Copo", quantidade: 0, preco: 7 },
+        { categoria: "Sucos", nome: "Suco de Manga Jarra", quantidade: 0, preco: 13 },
+        { categoria: "Sucos", nome: "Suco de Abacaxi Copo", quantidade: 0, preco: 7 },
+        { categoria: "Sucos", nome: "Suco de Abacaxi Jarra", quantidade: 0, preco: 13 },
+        { categoria: "Sucos", nome: "Suco de Acerola Copo", quantidade: 0, preco: 7 },
+        { categoria: "Sucos", nome: "Suco de Acerola Jarra", quantidade: 0, preco: 13 },
+        { categoria: "Sucos", nome: "Suco de Maracujá Copo", quantidade: 0, preco: 8 },
+        { categoria: "Sucos", nome: "Suco de Maracujá Jarra", quantidade: 0, preco: 15 },
+        { categoria: "Sucos", nome: "Suco de Cajá Copo", quantidade: 0, preco: 7 },
+        { categoria: "Sucos", nome: "Suco de Cajá Jarra", quantidade: 0, preco: 13 },
+        { categoria: "Sucos", nome: "Suco de Umbu Copo", quantidade: 0, preco: 7 },
+        { categoria: "Sucos", nome: "Suco de Umbu Jarra", quantidade: 0, preco: 13 },
+        {
+          categoria: "Vitaminas",
+          nome: "Vitamina de Maracujá Copo",
+          quantidade: 0,
+          preco: 13,
+        },
+        {
+          categoria: "Vitaminas",
+          nome: "Vitamina de Maracujá Jarra",
+          quantidade: 0,
+          preco: 26,
+        },
+        {
+          categoria: "Vitaminas",
+          nome: "Vitamina de Goiaba Copo",
+          quantidade: 0,
+          preco: 11,
+        },
+        {
+          categoria: "Vitaminas",
+          nome: "Vitamina de Goiaba Jarra",
+          quantidade: 0,
+          preco: 22,
+        },
       ],
     });
+
+    function filtrarPorCategoria(categoria) {
+      return Bebidas.value.tipos.filter((item) => item.categoria === categoria);
+    }
 
     function salvarPedido() {
       carrinho.bebidas.push(Bebidas.value);
@@ -60,6 +111,7 @@ export default {
 
     return {
       Bebidas,
+      filtrarPorCategoria,
       salvarPedido,
       voltar,
     };
@@ -75,7 +127,7 @@ export default {
         <span id="textDividers">Bebidas</span>
         <hr />
       </div>
-      <div v-for="(item, index) in Bebidas.tipos.slice(0, 12)" :key="item.nome">
+      <div v-for="item in filtrarPorCategoria('Bebidas')" :key="item.nome">
         <button class="botao1" @click="item.quantidade++">+</button>
 
         <button
@@ -100,7 +152,32 @@ export default {
         <span id="textDividers">Sucos</span>
         <hr />
       </div>
-      <div v-for="(item, index) in Bebidas.tipos.slice(12)" :key="item.nome">
+      <div v-for="item in filtrarPorCategoria('Sucos')" :key="item.nome">
+        <button class="botao1" @click="item.quantidade++">+</button>
+
+        <button
+          v-if="item.quantidade > 0"
+          class="botao2"
+          @click="item.quantidade--"
+        >
+          -
+        </button>
+
+        <label style="pointer-events: none" id="nomeItem" for="adicional"
+          ><span id="quantidadeDiv">{{ item.quantidade }}x</span>
+          {{ item.nome }}</label
+        >
+        <label id="preco">R$: {{ item.preco.toFixed(2) }}</label>
+        <p id="itens"></p>
+        <br />
+      </div>
+
+      <div class="dotted-line">
+        <hr />
+        <span id="textDividers">Vitaminas</span>
+        <hr />
+      </div>
+      <div v-for="item in filtrarPorCategoria('Vitaminas')" :key="item.nome">
         <button class="botao1" @click="item.quantidade++">+</button>
 
         <button

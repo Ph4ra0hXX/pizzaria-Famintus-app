@@ -78,6 +78,19 @@
             <option value="catupiry">Catupiry (Grátis)</option>
           </select>
         </div>
+        <div class="dotted-line">
+          <hr />
+          <span id="textDividers">Escolha o adicional:</span>
+          <hr />
+        </div>
+        <label class="additional-option">
+          <input
+            type="checkbox"
+            v-model="selectedQueijoCoalho"
+            class="flavor-checkbox"
+          />
+          Queijo coalho (R$ {{ queijoCoalhoPrice.toFixed(2) }})
+        </label>
       </div>
       <br />
       <br />
@@ -111,35 +124,37 @@ export default {
       selectedSize: "G",
       selectedFlavors: [],
       selectedCrust: "",
+      selectedQueijoCoalho: false,
+      queijoCoalhoPrice: 5.0,
       flavors: [
         {
           name: "Chocobrownie",
           ingredients:
-            "Massa Famintu's, mussarela, chocolate ao leite e pedaços de brownie",
-          prices: { P: 40, G: 62, GG: 75 },
-        },
-        {
-          name: "Banana Nevada",
-          ingredients:
-            "Massa Famintu's, mussarela, discos de banana, canela em pó e leite condensado",
+            "Massa Famintu's, creme de leite, chocolate ao leite e pedaços de brownie",
           prices: { P: 40, G: 62, GG: 75 },
         },
         {
           name: "Chocolate Crocante",
           ingredients:
-            "Massa Famintu's, mussarela, chocolate ao leite com ovomaltine",
+            "Massa Famintu's, creme de leite, chocolate ao leite com ovomaltine",
           prices: { P: 40, G: 62, GG: 75 },
         },
         {
           name: "Chocolate com Disquete",
           ingredients:
-            "Massa Famintu's, mussarela, chocolate ao leite e disquetes",
+            "Massa Famintu's, creme de leite, chocolate ao leite e disquetes",
           prices: { P: 40, G: 62, GG: 75 },
         },
         {
           name: "Chocolate com Morango",
           ingredients:
-            "Massa Famintu's, mussarela, chocolate ao leite e morangos fatiados",
+            "Massa Famintu's, creme de leite, chocolate ao leite e morangos fatiados",
+          prices: { P: 40, G: 62, GG: 75 },
+        },
+        {
+          name: "Chocolate com Oreo",
+          ingredients:
+            "Massa Famintu's, creme de leite, chocolate e Oreo em pedaços",
           prices: { P: 40, G: 62, GG: 75 },
         },
       ],
@@ -179,6 +194,7 @@ export default {
         tamanho: this.selectedSize,
         sabores: this.selectedFlavors,
         borda: this.selectedCrust || "Sem borda",
+        adicional: this.selectedQueijoCoalho ? "Queijo coalho" : "Sem adicional",
         preco: this.getHighestPrice(),
       };
       const carrinho = carrinhoStore();
@@ -204,6 +220,7 @@ export default {
     resetFlavors() {
       this.selectedFlavors = [];
       this.selectedCrust = "";
+      this.selectedQueijoCoalho = false;
     },
     voltar() {
       router.push("/");
@@ -226,6 +243,10 @@ export default {
         const crustPrice =
           this.crustPrices[this.selectedCrust][this.selectedSize];
         highestPrice += crustPrice;
+      }
+
+      if (this.selectedQueijoCoalho) {
+        highestPrice += this.queijoCoalhoPrice;
       }
 
       return highestPrice.toFixed(2);
@@ -268,6 +289,15 @@ export default {
 
 .flavor-checkbox:checked {
   accent-color: #f25430;
+}
+
+.additional-option {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Barlow-SemiBold";
+  font-size: 17px;
 }
 
 #nomeepreco {

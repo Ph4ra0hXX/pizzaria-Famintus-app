@@ -80,6 +80,19 @@
             <option value="catupiry">Catupiry (Grátis)</option>
           </select>
         </div>
+        <div class="dotted-line">
+          <hr />
+          <span id="textDividers">Escolha o adicional:</span>
+          <hr />
+        </div>
+        <label class="additional-option">
+          <input
+            type="checkbox"
+            v-model="selectedQueijoCoalho"
+            class="flavor-checkbox"
+          />
+          Queijo coalho (R$ {{ queijoCoalhoPrice.toFixed(2) }})
+        </label>
         <br />
       </div>
 
@@ -113,6 +126,8 @@ export default {
       selectedSize: "G",
       selectedFlavors: [],
       selectedCrust: "",
+      selectedQueijoCoalho: false,
+      queijoCoalhoPrice: 5.0,
       flavors: [
         // Tradicionais
         {
@@ -164,12 +179,6 @@ export default {
           prices: { P: 40, G: 58, GG: 68 },
         },
         {
-          name: "Famintus",
-          ingredients:
-            "Massa Famintu's, molho especial, mussarela, frango, carne de sol, calabresa, bacon, catupiry, cebola, tomate, milho, presunto, orégano",
-          prices: { P: 40, G: 58, GG: 70 },
-        },
-        {
           name: "Mista",
           ingredients:
             "Massa Famintu's, molho especial, mussarela, presunto, cebola, tomate, milho e orégano",
@@ -187,6 +196,12 @@ export default {
           prices: { P: 30, G: 50, GG: 65 },
         },
         // Especiais
+        {
+          name: "Famintus",
+          ingredients:
+            "Massa Famintu's, molho especial, mussarela, frango, carne de sol, calabresa, bacon, catupiry, cebola, tomate, milho, presunto, orégano",
+          prices: { P: 50, G: 70, GG: 90 },
+        },
         {
           name: "Carne sol com queijo coalho",
           ingredients:
@@ -218,12 +233,6 @@ export default {
           prices: { P: 45, G: 75, GG: 90 },
         },
         {
-          name: "Hotdog",
-          ingredients:
-            "Massa Famintu's, molho especial, mussarela, molho especial de salsicha, cebola, milho, batata palha e orégano",
-          prices: { P: 45, G: 70, GG: 80 },
-        },
-        {
           name: "Lombo Cremoso",
           ingredients:
             "Massa Famintu's, molho especial, cream cheese, mussarela, lombo, cebola, milho e orégano",
@@ -246,12 +255,6 @@ export default {
           ingredients:
             "Massa Famintu's, molho especial, mussarela, filé, batata frita e orégano",
           prices: { P: 45, G: 72, GG: 85 },
-        },
-        {
-          name: "Bacon Croc",
-          ingredients:
-            "Massa Famintu's, molho especial, mussarela, bacon crocante e orégano",
-          prices: { P: 45, G: 70, GG: 80 },
         },
       ],
       crustPrices: {
@@ -290,6 +293,7 @@ export default {
         tamanho: this.selectedSize,
         sabores: this.selectedFlavors,
         borda: this.selectedCrust || "Sem borda",
+        adicional: this.selectedQueijoCoalho ? "Queijo coalho" : "Sem adicional",
         preco: this.getHighestPrice(),
       };
       const carrinho = carrinhoStore();
@@ -315,6 +319,7 @@ export default {
     resetFlavors() {
       this.selectedFlavors = [];
       this.selectedCrust = "";
+      this.selectedQueijoCoalho = false;
     },
     voltar() {
       router.push("/");
@@ -337,6 +342,10 @@ export default {
         const crustPrice =
           this.crustPrices[this.selectedCrust][this.selectedSize];
         highestPrice += crustPrice;
+      }
+
+      if (this.selectedQueijoCoalho) {
+        highestPrice += this.queijoCoalhoPrice;
       }
 
       return highestPrice.toFixed(2);
@@ -379,6 +388,15 @@ export default {
 
 .flavor-checkbox:checked {
   accent-color: #f25430;
+}
+
+.additional-option {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Barlow-SemiBold";
+  font-size: 17px;
 }
 
 #nomeepreco {

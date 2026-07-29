@@ -298,6 +298,9 @@ export default {
             <strong>Sabores:</strong> {{ pedido.sabores.join(", ")
             }}<br /><br />
             <strong>Borda:</strong> {{ pedido.borda }}<br /><br />
+            <template v-if="pedido.adicional">
+              <strong>Adicional:</strong> {{ pedido.adicional }}<br /><br />
+            </template>
           </p>
         </div>
 
