@@ -32,7 +32,7 @@ export default {
       { nome: "Conviver", preco: 8.0 },
       { nome: "Bom Jesus", preco: 7.0 },
       { nome: "Cidade Alta até a praça", preco: 7.0 },
-      { nome: "Cidade Alta depois da praça", preco: 9.0 },
+      { nome: "Cidade Alta depois da praça(até a caixa d'água)", preco: 9.0 },
       { nome: "Triângulo", preco: 12.0 },
       { nome: "Bom Jesus do Cruzeiro", preco: 12.0 },
       { nome: "Hospital Regional", preco: 25.0 },
@@ -133,7 +133,7 @@ export default {
             return Object.keys(categoria)
               .map((chave) => {
                 const itensComQuantidade = categoria[chave].filter(
-                  (item) => item.quantidade > 0
+                  (item) => item.quantidade > 0,
                 );
 
                 if (itensComQuantidade.length > 0) {
@@ -164,7 +164,7 @@ export default {
             return Object.keys(categoria)
               .map((chave) => {
                 const itensComQuantidade = categoria[chave].filter(
-                  (item) => item.quantidade > 0
+                  (item) => item.quantidade > 0,
                 );
 
                 if (itensComQuantidade.length > 0) {
@@ -195,7 +195,7 @@ export default {
             return Object.keys(categoria)
               .map((chave) => {
                 const itensComQuantidade = categoria[chave].filter(
-                  (item) => item.quantidade > 0
+                  (item) => item.quantidade > 0,
                 );
 
                 if (itensComQuantidade.length > 0) {
@@ -226,7 +226,7 @@ export default {
             return Object.keys(categoria)
               .map((chave) => {
                 const itensComQuantidade = categoria[chave].filter(
-                  (item) => item.quantidade > 0
+                  (item) => item.quantidade > 0,
                 );
 
                 if (itensComQuantidade.length > 0) {
@@ -261,7 +261,7 @@ export default {
             return Object.keys(categoria)
               .map((chave) => {
                 const itensComQuantidade = categoria[chave].filter(
-                  (item) => item.quantidade > 0
+                  (item) => item.quantidade > 0,
                 );
 
                 if (itensComQuantidade.length > 0) {
@@ -487,7 +487,9 @@ export default {
 
           <br />
           <div class="info">
-            <h3>Número da Casa: <span class="required-badge">obrigatório</span></h3>
+            <h3>
+              Número da Casa: <span class="required-badge">obrigatório</span>
+            </h3>
           </div>
           <div class="input-field">
             <input
@@ -505,7 +507,10 @@ export default {
           </div>
           <br />
           <div class="info">
-            <h3>Ponto de Referência: <span class="required-badge">obrigatório</span></h3>
+            <h3>
+              Ponto de Referência:
+              <span class="required-badge">obrigatório</span>
+            </h3>
           </div>
           <div class="input-field">
             <input
@@ -521,7 +526,9 @@ export default {
           <br />
         </div>
         <div class="info">
-          <h3>Formas de Pagamento: <span class="required-badge">obrigatório</span></h3>
+          <h3>
+            Formas de Pagamento: <span class="required-badge">obrigatório</span>
+          </h3>
         </div>
         <div class="payment-container">
           <div class="price-card">
@@ -566,9 +573,7 @@ export default {
         >
           <button id="butCopiarPix" @click="copyToClipboard">Copiar PIX</button>
           <div id="infopix">
-            <p id="beneficiario">
-              Beneficiário: Ozinete Lima Maia
-            </p>
+            <p id="beneficiario">Beneficiário: Ozinete Lima Maia</p>
             <p id="banco">Banco: PicPay</p>
             <p id="chave">Chave PIX: 74204963315</p>
           </div>
@@ -788,7 +793,10 @@ export default {
   border: 1px solid #c8cad2;
   background: #fff;
   color: #201726;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .input-field select {
@@ -799,7 +807,10 @@ export default {
   border: 1px solid #c8cad2;
   background: #fff;
   color: #201726;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .input-field input::placeholder {
