@@ -23,6 +23,16 @@ export default {
           quantidade: 0,
         },
         {
+          nome: "X-Burguer Famintu's (massa de pizza, blend artesanal, queijo, cheddar e salada)",
+          preco: 10.0,
+          quantidade: 0,
+        },
+        {
+          nome: "Prato executivo de carne (carne suculenta, batata frita, salada fresca, arroz temperado e farofa crocante)",
+          preco: 40.0,
+          quantidade: 0,
+        },
+        {
           nome: "Carne de sol acebolada (com batata frita, arroz e farofa)",
           preco: 50.0,
           quantidade: 0,

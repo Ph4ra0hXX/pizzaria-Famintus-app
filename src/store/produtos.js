@@ -101,7 +101,7 @@ export const produtosStore = defineStore("produto", {
           id: 8,
           nome: "ENTRADAS",
           img: "food6.webp",
-          descricao: "Batatas e Porções",
+          descricao: "Entradas, lanches e pratos",
           url: "/combo",
         },
         {
@@ -159,7 +159,7 @@ export const produtosStore2 = defineStore("produto2", {
           id: 8,
           nome: "ENTRADAS",
           img: "food6.webp",
-          descricao: "Batatas e Porções",
+          descricao: "Entradas, lanches e pratos",
           url: "/combo",
         },
         {
