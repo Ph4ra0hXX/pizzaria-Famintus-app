@@ -14,26 +14,33 @@ export default {
       batataFrita: [
         {
           nome: "Batata tradicional",
+          descricao: "Batata frita tradicional",
           preco: 18.0,
           quantidade: 0,
         },
         {
-          nome: "Batata Famintus (Batata, calabresa, bacon e cheddar)",
+          nome: "Batata Famintus",
+          descricao: "Batata, calabresa, bacon e cheddar",
           preco: 30.0,
           quantidade: 0,
         },
         {
-          nome: "X-Burguer Famintu's (massa de pizza, blend artesanal, queijo, cheddar e salada)",
+          nome: "X-Burguer Famintu's",
+          descricao:
+            "Massa de pizza, blend artesanal, queijo, cheddar e salada",
           preco: 10.0,
           quantidade: 0,
         },
         {
-          nome: "Prato executivo de carne (carne suculenta, batata frita, salada fresca, arroz temperado e farofa crocante)",
+          nome: "Prato executivo de carne",
+          descricao:
+            "Carne suculenta, batata frita, salada fresca, arroz temperado e farofa crocante",
           preco: 40.0,
           quantidade: 0,
         },
         {
-          nome: "Carne de sol acebolada (com batata frita, arroz e farofa)",
+          nome: "Carne de sol acebolada",
+          descricao: "Com batata frita, arroz e farofa",
           preco: 50.0,
           quantidade: 0,
         },
@@ -90,7 +97,7 @@ export default {
           {{ item.nome }}</label
         >
         <label id="preco">R$: {{ item.preco.toFixed(2) }}</label>
-        <p id="itens"></p>
+        <p v-if="item.descricao" id="itens">{{ item.descricao }}</p>
         <br />
       </div>
       <br />
