@@ -39,6 +39,12 @@ export default {
           quantidade: 0,
         },
         {
+          nome: "Carne de Sol na Nata",
+          descricao: "Carne de sol, cuscuz ou arroz e nata",
+          preco: 40.0,
+          quantidade: 0,
+        },
+        {
           nome: "Carne de sol acebolada",
           descricao: "Com batata frita, arroz e farofa",
           preco: 50.0,
