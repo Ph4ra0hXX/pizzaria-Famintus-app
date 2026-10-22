@@ -50,6 +50,12 @@ export default {
           preco: 50.0,
           quantidade: 0,
         },
+        {
+          nome: "Cuscuz Famintus",
+          descricao: "Recheado com carne de sol e calabresa",
+          preco: 15.99,
+          quantidade: 0,
+        },
       ],
     });
 
